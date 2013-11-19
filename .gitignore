@@ -1,5 +1,4 @@
-
-eclipse
+*.snap
 *.pydevproject
 .project
 .metadata/
