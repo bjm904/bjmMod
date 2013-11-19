@@ -11,18 +11,18 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.Icon;
 
-public class MacuahuitlDiamond extends ItemSword {
+public class MacuahuitlIron extends ItemSword {
 
-	public MacuahuitlDiamond(int id, EnumToolMaterial toolMaterial) {
+	public MacuahuitlIron(int id, EnumToolMaterial toolMaterial) {
 		super(id, toolMaterial);
 		this.setCreativeTab(bjmMod.CreativeTabBjmMod);
-		this.setUnlocalizedName(Names.macuahuitlDiamond_unlocalizedName);
+		this.setUnlocalizedName(Names.macuahuitlIron_unlocalizedName);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {
-		itemIcon = icon.registerIcon(ModInfo.texture + ":" + Names.macuahuitlDiamond_unlocalizedName);
+		itemIcon = icon.registerIcon(ModInfo.texture + ":" + Names.macuahuitlIron_unlocalizedName);
 	}
 	
 }

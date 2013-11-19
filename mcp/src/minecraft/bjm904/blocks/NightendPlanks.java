@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import bjm904.ModInfo;
 import bjm904.Names;
+import bjm904.bjmMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -14,7 +15,7 @@ public class NightendPlanks extends Block {
 	public NightendPlanks(int id, Material par2Material) {
 		super(id, Material.wood);
 		this.setUnlocalizedName(Names.nightendPlanks_unlocalizedName);
-		this.setCreativeTab(CreativeTabs.tabFood);
+		this.setCreativeTab(bjmMod.CreativeTabBjmMod);
 		this.setHardness(2F);
 		this.setResistance(15F);
 		this.setStepSound(Block.soundWoodFootstep);

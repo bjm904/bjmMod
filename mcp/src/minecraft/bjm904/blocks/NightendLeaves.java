@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import bjm904.ModInfo;
 import bjm904.Names;
+import bjm904.bjmMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -15,7 +16,7 @@ public class NightendLeaves extends Block {
 	public NightendLeaves(int id, Material material) {
 		super(id, material);
 		this.setUnlocalizedName(Names.nightendLeaves_unlocalizedName);
-		this.setCreativeTab(CreativeTabs.tabFood);
+		this.setCreativeTab(bjmMod.CreativeTabBjmMod);
 		this.setHardness(0.2F);
 		this.setResistance(15F);
 		this.setStepSound(Block.soundGrassFootstep);

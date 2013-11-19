@@ -2,6 +2,7 @@ package bjm904.blocks;
 
 import bjm904.ModInfo;
 import bjm904.Names;
+import bjm904.bjmMod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -16,7 +17,7 @@ public class nightendSapling extends BlockFlower {
 	public nightendSapling(int id) {
 		super(id);
 		this.setUnlocalizedName(Names.nightendSapling_unlocalizedName);
-		this.setCreativeTab(CreativeTabs.tabFood);
+		this.setCreativeTab(bjmMod.CreativeTabBjmMod);
 		this.setHardness(0F);
 		this.setResistance(15F);
 		this.setLightValue(0F);
