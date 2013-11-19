@@ -3,8 +3,8 @@
 #################
 ## Eclipse
 #################
-eclipse/*
 
+mcp/eclipse/**
 *.pydevproject
 .project
 .metadata/
