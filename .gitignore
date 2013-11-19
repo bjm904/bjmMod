@@ -3,7 +3,7 @@
 #################
 ## Eclipse
 #################
-/eclipse/
+eclipse/*
 
 *.pydevproject
 .project
