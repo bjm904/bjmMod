@@ -1,5 +1,8 @@
 package bjm904;
 
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraftforge.common.EnumHelper;
+import bjm904.blocks.Blocks;
 import bjm904.items.Items;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -20,8 +23,10 @@ public class bjmMod {
 	public static void preInit( FMLPreInitializationEvent event ) {
 		proxy.initRenderers();
 		proxy.initSounds();
+		Blocks.init();
 		Items.init();
 		Items.addNames();
+		EnumToolMaterial dMac = EnumHelper.addToolMaterial("Ruby", 3, 64, 100.0F, 3, 15);
 	}
 
 	@EventHandler

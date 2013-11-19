@@ -2,13 +2,6 @@
 ## Eclipse
 #################
 
-**
-!*/
-
-!mcp/
-!/*/src/**/*
-
-
 *.pydevproject
 .project
 .metadata
