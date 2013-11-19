@@ -24,3 +24,19 @@
 2013-11-18 22:44:38 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
 2013-11-18 22:44:39 [CLIENT] [SEVERE] Realms: Invalid session id
 2013-11-18 22:44:49 [CLIENT] [INFO] Stopping!
+2013-11-18 23:17:22 [CLIENT] [INFO] Setting user: Player156
+2013-11-18 23:17:22 [CLIENT] [INFO] (Session ID is null)
+2013-11-18 23:17:23 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2013-11-18 23:17:23 [CLIENT] [INFO] Reloading ResourceManager: Default
+2013-11-18 23:17:25 [CLIENT] [INFO] Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:bjmMod
+2013-11-18 23:17:25 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 23:17:25 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 23:17:25 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 23:17:26 [CLIENT] [SEVERE] Using missing texture, unable to load: minecraft:textures/items/MISSING_ICON_ITEM_16256_macuahuitl.png
+2013-11-18 23:17:26 [CLIENT] [INFO] Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:bjmMod
+2013-11-18 23:17:26 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 23:17:26 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 23:17:26 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 23:17:26 [CLIENT] [SEVERE] Using missing texture, unable to load: minecraft:textures/items/MISSING_ICON_ITEM_16256_macuahuitl.png
+2013-11-18 23:17:28 [CLIENT] [SEVERE] Realms: Invalid session id
+2013-11-18 23:17:45 [CLIENT] [INFO] Stopping!
