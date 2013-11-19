@@ -9,4 +9,10 @@ public class Names {
 	
 	public static final String nightendPlanks_unlocalizedName = "nightendPlanks";
 	public static final String nightendPlanks_name = "Nightend Planks";
+	
+	public static final String nightendLeaves_unlocalizedName = "nightendLeaves";
+	public static final String nightendLeaves_name = "Nightend Leaves";
+
+	public static final String nightendSapling_unlocalizedName = "nightendSapling";
+	public static final String nightendSapling_name = "Nightend Sapling";
 }
