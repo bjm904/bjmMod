@@ -3,10 +3,11 @@
 #################
 ## Eclipse
 #################
-mcp/eclipse/
+/eclipse/
+
 *.pydevproject
 .project
-.metadata
+.metadata/
 tmp/
 *.tmp
 *.bak
