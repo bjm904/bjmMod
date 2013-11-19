@@ -25,7 +25,9 @@ public class bjmMod {
 		proxy.initSounds();
 		Blocks.init();
 		Items.init();
+		Recipes.init();
 		Items.addNames();
+		Blocks.addNames();
 		EnumToolMaterial dMac = EnumHelper.addToolMaterial("Ruby", 3, 64, 100.0F, 3, 15);
 	}
 

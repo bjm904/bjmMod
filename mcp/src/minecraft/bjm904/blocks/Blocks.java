@@ -8,14 +8,19 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 public class Blocks {
-public static Block block;
+public static Block nightendLog;
+public static Block nightendPlanks;
 
 public static void init() {
-block = new NightendLog(Ids.nightendLog, null);
-GameRegistry.registerBlock(block, Names.nightendLog_name);
+nightendLog = new NightendLog(Ids.nightendLog, null);
+GameRegistry.registerBlock(nightendLog, Names.nightendLog_name);
+
+nightendPlanks = new NightendPlanks(Ids.nightendPlanks, null);
+GameRegistry.registerBlock(nightendPlanks, Names.nightendPlanks_name);
 }
 
 public static void addNames() {
-LanguageRegistry.addName(block, Names.nightendLog_name);
+LanguageRegistry.addName(nightendLog, Names.nightendLog_name);
+LanguageRegistry.addName(nightendPlanks, Names.nightendPlanks_name);
 }
 }
