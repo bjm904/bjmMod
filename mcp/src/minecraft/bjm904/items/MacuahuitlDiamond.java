@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.Icon;
 
 public class MacuahuitlDiamond extends ItemSword {
 
@@ -16,11 +17,11 @@ public class MacuahuitlDiamond extends ItemSword {
 		this.setCreativeTab(CreativeTabs.tabFood);
 		this.setUnlocalizedName(Names.macuahuitlDiamond_unlocalizedName);
 	}
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {
 		itemIcon = icon.registerIcon(ModInfo.texture + ":" + Names.macuahuitlDiamond_unlocalizedName);
 	}
-	
 	
 }
