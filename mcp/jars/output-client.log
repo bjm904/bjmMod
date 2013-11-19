@@ -1,0 +1,12 @@
+2013-11-18 21:23:39 [CLIENT] [INFO] Setting user: Player484
+2013-11-18 21:23:39 [CLIENT] [INFO] (Session ID is null)
+2013-11-18 21:23:40 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2013-11-18 21:23:41 [CLIENT] [INFO] Reloading ResourceManager: Default
+2013-11-18 21:23:47 [CLIENT] [INFO] Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge
+2013-11-18 21:23:47 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 21:23:47 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 21:23:48 [CLIENT] [INFO] Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge
+2013-11-18 21:23:48 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 21:23:48 [CLIENT] [WARNING] ResourcePack: ignored non-lowercase namespace: %s in %s
+2013-11-18 21:23:49 [CLIENT] [SEVERE] Realms: Invalid session id
+2013-11-18 21:24:24 [CLIENT] [INFO] Stopping!
