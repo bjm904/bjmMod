@@ -42,7 +42,7 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
         this.setUnlocalizedName(Names.nightendLeaves_unlocalizedName);
         this.setHardness(0.2F);
-        this.setLightValue(2F);
+        this.setLightValue(0.3F);
 
     }
     /**
