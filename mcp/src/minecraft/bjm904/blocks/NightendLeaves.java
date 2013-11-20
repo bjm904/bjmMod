@@ -301,7 +301,16 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
     {
         return false;
     }
-
+    public int getRenderBlockPass(){
+    	return 1;
+    }
+    public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
+    public boolean shouldSideBeRendered(){
+    	return true;
+    }
     @SideOnly(Side.CLIENT)
 
     /**

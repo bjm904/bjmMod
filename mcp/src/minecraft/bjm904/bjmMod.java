@@ -4,6 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.MinecraftForge;
 import bjm904.blocks.Blocks;
 import bjm904.items.Items;
 import cpw.mods.fml.common.Mod;
@@ -25,6 +26,7 @@ public class bjmMod {
 	
 	public static CreativeTabs CreativeTabBjmMod = new CreativeTabBjmMod(CreativeTabs.getNextID(), ModInfo.NAME);
 	
+	
 	@EventHandler
 	public static void preInit( FMLPreInitializationEvent event ) {
 		proxy.initRenderers();
@@ -42,6 +44,7 @@ public class bjmMod {
 	@EventHandler
 	public static void init( FMLInitializationEvent event ) {
 		LanguageRegistry.instance().addStringLocalization("itemGroup." + ModInfo.NAME, "en_US", ModInfo.NAME);
+		MinecraftForge.EVENT_BUS.register(new Nightend_Bonemeal_Event());
 	}
 
 	@EventHandler
