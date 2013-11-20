@@ -35,6 +35,7 @@ public class MacuahuitlIron extends Item
         this.setMaxDamage(1000);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
         this.weaponDamage = 16.0F;
+        this.setUnlocalizedName(Names.macuahuitlIron_unlocalizedName);
     }
 
 

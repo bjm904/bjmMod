@@ -7,6 +7,7 @@ import java.util.Random;
 import bjm904.ModInfo;
 import bjm904.Names;
 import bjm904.bjmMod;
+import bjm904.items.Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
@@ -224,7 +225,7 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return Blocks.nightendSapling.blockID;
+        return Items.lunite.itemID;
     }
 
     /**
@@ -257,7 +258,7 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
                 this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(k1, 1, this.damageDropped(par5)));
             }
 
-            j1 = 10;
+            j1 = 200;
 
             if (par7 > 0)
             {
@@ -271,7 +272,7 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
 
             if ((par5 & 3) == 0 && par1World.rand.nextInt(j1) == 0)
             {
-                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.appleRed, 1, 0));
+                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Items.lunite, 1, 0));
             }
         }
     }

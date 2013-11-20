@@ -35,6 +35,7 @@ public class MacuahuitlStone extends Item
         this.setMaxDamage(400);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
         this.weaponDamage = 12.0F;
+        this.setUnlocalizedName(Names.macuahuitlStone_unlocalizedName);
     }
 
 

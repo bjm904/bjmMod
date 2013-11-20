@@ -37,13 +37,17 @@ public class Names {
 	
 	public static final String nightendLog_unlocalizedName = "nightendLog";
 	public static final String nightendLog_name = "Nightend Log";
-	
 	public static final String nightendPlanks_unlocalizedName = "nightendPlanks";
 	public static final String nightendPlanks_name = "Nightend Planks";
-	
 	public static final String nightendLeaves_unlocalizedName = "nightendLeaves";
 	public static final String nightendLeaves_name = "Nightend Leaves";
-
 	public static final String nightendSapling_unlocalizedName = "nightendSapling";
 	public static final String nightendSapling_name = "Nightend Sapling";
+	
+	public static final String lunarium_unlocalizedName = "lunarium";
+	public static final String lunarium_name = "Lunarium";
+	public static final String solsteim_unlocalizedName = "solsteim";
+	public static final String solsteim_name = "Solsteim";
+	public static final String lunite_unlocalizedName = "lunite";
+	public static final String lunite_name = "Lunite";
 }

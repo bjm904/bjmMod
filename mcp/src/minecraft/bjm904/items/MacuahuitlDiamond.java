@@ -35,6 +35,7 @@ public class MacuahuitlDiamond extends Item
         this.setMaxDamage(3000);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
         this.weaponDamage = 20.0F;
+        this.setUnlocalizedName(Names.macuahuitlDiamond_unlocalizedName);
     }
 
     /**

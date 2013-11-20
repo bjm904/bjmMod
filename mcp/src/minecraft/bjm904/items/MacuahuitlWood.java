@@ -35,6 +35,7 @@ public class MacuahuitlWood extends Item
         this.setMaxDamage(120);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
         this.weaponDamage = 10.0F;
+        this.setUnlocalizedName(Names.macuahuitlWood_unlocalizedName);
     }
 
     /**

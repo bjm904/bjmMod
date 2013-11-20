@@ -22,6 +22,10 @@ public class Items {
 	public static Item macuahuitlIronStock;
 	public static Item macuahuitlStoneStock;
 	public static Item macuahuitlWoodStock;
+	public static Item lunarium;
+	public static Item solsteim;
+	public static Item lunite;
+	
 	public static void init() {
 		macuahuitlDiamond = new MacuahuitlDiamond(Ids.macuahuitlDiamond, EnumToolMaterial.EMERALD);
 		macuahuitlGold = new MacuahuitlGold(Ids.macuahuitlGold, EnumToolMaterial.GOLD);
@@ -40,6 +44,10 @@ public class Items {
 		macuahuitlIronStock = new MacuahuitlIronStock(Ids.macuahuitlIronStock);
 		macuahuitlStoneStock = new MacuahuitlStoneStock(Ids.macuahuitlStoneStock);
 		macuahuitlWoodStock = new MacuahuitlWoodStock(Ids.macuahuitlWoodStock);
+		
+		lunarium = new Lunarium(Ids.lunarium);
+		solsteim = new Solsteim(Ids.solsteim);
+		lunite = new Lunite(Ids.lunite);
 	}
 	public static void addNames() {
 		LanguageRegistry.addName(macuahuitlDiamond, Names.macuahuitlDiamond_name);
@@ -57,5 +65,9 @@ public class Items {
 		LanguageRegistry.addName(macuahuitlIronStock, Names.macuahuitlIronStock_name);
 		LanguageRegistry.addName(macuahuitlStoneStock, Names.macuahuitlStoneStock_name);
 		LanguageRegistry.addName(macuahuitlWoodStock, Names.macuahuitlWoodStock_name);
+		
+		LanguageRegistry.addName(lunarium, Names.lunarium_name);
+		LanguageRegistry.addName(solsteim, Names.solsteim_name);
+		LanguageRegistry.addName(lunite, Names.lunite_name);
 	}
 }

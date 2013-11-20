@@ -71,5 +71,9 @@ public class Recipes {
 		GameRegistry.addRecipe(new ItemStack(Items.macuahuitlWoodStock, 1),
 				new Object[] {"ODO",'O', Block.obsidian, 'D', Block.planks
 				});
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.nightendSapling, 1),
+				new Object[] {"LLL","LSL","LLL",'S', Block.sapling, 'L', Items.lunite
+				});
 	}
 }
