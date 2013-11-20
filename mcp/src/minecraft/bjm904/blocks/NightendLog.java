@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import bjm904.ModInfo;
+import bjm904.Names;
 import bjm904.bjmMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
@@ -30,6 +31,9 @@ public class NightendLog extends BlockRotatedPillar
     {
         super(par1, Material.wood);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+		this.setHardness(2F);
+		this.setUnlocalizedName(Names.nightendLog_unlocalizedName);
+		this.setStepSound(Block.soundWoodFootstep);
     }
 
     /**
