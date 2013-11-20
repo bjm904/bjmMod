@@ -32,7 +32,7 @@ public class MacuahuitlIron extends Item
         super(par1);
         this.toolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
-        this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
+        this.setMaxDamage(1000);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
         this.weaponDamage = 16.0F;
     }

@@ -32,7 +32,7 @@ public class MacuahuitlDiamond extends Item
         super(par1);
         this.toolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
-        this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
+        this.setMaxDamage(3000);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
         this.weaponDamage = 20.0F;
     }

@@ -32,9 +32,9 @@ public class MacuahuitlGold extends Item
         super(par1);
         this.toolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
-        this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
+        this.setMaxDamage(66);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
-        this.weaponDamage = 8.0F;
+        this.weaponDamage = 12.0F;
     }
 
 

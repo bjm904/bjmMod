@@ -32,9 +32,9 @@ public class MacuahuitlWood extends Item
         super(par1);
         this.toolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
-        this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
+        this.setMaxDamage(120);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
-        this.weaponDamage = 6.0F;
+        this.weaponDamage = 10.0F;
     }
 
     /**
