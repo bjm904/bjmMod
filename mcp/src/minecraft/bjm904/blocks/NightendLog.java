@@ -34,6 +34,7 @@ public class NightendLog extends BlockRotatedPillar
 		this.setHardness(2F);
 		this.setUnlocalizedName(Names.nightendLog_unlocalizedName);
 		this.setStepSound(Block.soundWoodFootstep);
+		this.setLightValue(2F);
     }
 
     /**
