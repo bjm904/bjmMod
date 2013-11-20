@@ -15,16 +15,16 @@ public static Block nightendLeaves;
 public static BlockFlower nightendSapling;
 
 public static void init() {
-nightendLog = new NightendLog(Ids.nightendLog, Material.wood);
+nightendLog = new NightendLog(Ids.nightendLog);
 GameRegistry.registerBlock(nightendLog, Names.nightendLog_name);
 
 nightendPlanks = new NightendPlanks(Ids.nightendPlanks, Material.wood);
 GameRegistry.registerBlock(nightendPlanks, Names.nightendPlanks_name);
 
-nightendLeaves = new NightendLeaves(Ids.nightendLeaves, Material.leaves);
+nightendLeaves = new NightendLeaves(Ids.nightendLeaves);
 GameRegistry.registerBlock(nightendLeaves, Names.nightendLeaves_name);
 
-nightendSapling = new nightendSapling(Ids.nightendSapling);
+nightendSapling = new NightendSapling(Ids.nightendSapling);
 GameRegistry.registerBlock(nightendSapling, Names.nightendSapling_name);
 }
 
