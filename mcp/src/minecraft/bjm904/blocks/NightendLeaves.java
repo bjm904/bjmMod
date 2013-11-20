@@ -225,7 +225,7 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return Items.lunite.itemID;
+        return Items.lunarium.itemID;
     }
 
     /**
@@ -272,7 +272,7 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
 
             if ((par5 & 3) == 0 && par1World.rand.nextInt(j1) == 0)
             {
-                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Items.lunite, 1, 0));
+                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Items.lunarium, 1, 0));
             }
         }
     }
