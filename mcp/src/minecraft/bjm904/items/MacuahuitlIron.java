@@ -49,6 +49,10 @@ public class MacuahuitlIron extends Item
         {
             return 15.0F;
         }
+        else if (par2Block.blockMaterial == Material.wood){
+        	
+        	return 6.0F;
+        }
         else
         {
             Material material = par2Block.blockMaterial;
