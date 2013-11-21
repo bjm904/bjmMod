@@ -19,15 +19,18 @@ public class Ids {
 	public static final int macuahuitlStoneStock = 15013;
 	public static final int macuahuitlWoodStock = 15014;
 	
+	public static final int nightendSapling = 1000;
+	public static final int daystarSapling = 1001;
+	public static final int aerobreezeSapling = 1002;
+	public static final int aquaSapling = 1003;
+	public static final int nightendLog = 1004;
+	public static final int daystarLog = 1005;
+	public static final int aerobreezeLog = 1006;
+	public static final int aquaLog = 1007;
+	public static final int nightendPlanks = 1025;
+	public static final int nightendLeaves = 1026;
 	
-	public static final int nightendLog = 1000;
-	public static final int nightendPlanks = 1001;
-	public static final int nightendLeaves = 1002;
-	public static final int nightendSapling = 1003;
-	
-	public static final int daystarSapling = 1007;
-	
-	public static final int lunarium = 1004;
-	public static final int solsteim = 1005;
-	public static final int lunite = 1006;
+	public static final int lunarium = 1104;
+	public static final int solsteim = 1105;
+	public static final int lunite = 1106;
 }

@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class NightendLog extends BlockRotatedPillar
+public class AerobreezeLog extends BlockRotatedPillar
 {
     /** The type of tree this log came from. */
     public static final String[] woodType = new String[] {"oak", "spruce", "birch", "jungle"};
@@ -25,7 +25,7 @@ public class NightendLog extends BlockRotatedPillar
     @SideOnly(Side.CLIENT)
     private Icon[] tree_top;
 
-    protected NightendLog(int par1)
+    protected AerobreezeLog(int par1)
     {
         super(par1, Material.wood);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
@@ -131,8 +131,8 @@ public class NightendLog extends BlockRotatedPillar
 
         for (int i = 0; i < this.field_111052_c.length; ++i)
         {
-            this.field_111052_c[i] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":nightendLog" + woodType[i] + "_side");
-            this.tree_top[i] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":nightendLog_top");
+            this.field_111052_c[i] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":aerobreezeLog" + woodType[i] + "_side");
+            this.tree_top[i] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":aerobreezeLog_top");
         }
     }
 

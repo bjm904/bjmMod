@@ -6,11 +6,11 @@ import java.util.Random;
 import bjm904.ModInfo;
 import bjm904.Names;
 import bjm904.bjmMod;
-import bjm904.treeGen.NightendGen;
-import bjm904.treeGen.NightendGenBig;
-import bjm904.treeGen.NightendGenForest;
-import bjm904.treeGen.NightendGenHuge;
-import bjm904.treeGen.NightendGenTaiga;
+import bjm904.treeGen.AerobreezeGen;
+import bjm904.treeGen.AerobreezeGenBig;
+import bjm904.treeGen.AerobreezeGenForest;
+import bjm904.treeGen.AerobreezeGenHuge;
+import bjm904.treeGen.AerobreezeGenTaiga;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,13 +22,13 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class NightendSapling extends BlockFlower
+public class AerobreezeSapling extends BlockFlower
 {
     public static final String[] WOOD_TYPES = new String[] {"Oak", "Spruce", "Birch", "Jungle"};
     @SideOnly(Side.CLIENT)
     private Icon[] saplingIcon;
 
-    public NightendSapling(int par1)
+    public AerobreezeSapling(int par1)
     {
         super(par1);
         float f = 0.4F;
@@ -92,11 +92,11 @@ public class NightendSapling extends BlockFlower
 
         if (l == 1)
         {
-            object = new NightendGenTaiga(true);
+            object = new AerobreezeGenTaiga(true);
         }
         else if (l == 2)
         {
-            object = new NightendGenForest(true);
+            object = new AerobreezeGenForest(true);
         }
         else if (l == 3)
         {
@@ -106,7 +106,7 @@ public class NightendSapling extends BlockFlower
                 {
                     if (this.isSameSapling(par1World, par2 + i1, par3, par4 + j1, 3) && this.isSameSapling(par1World, par2 + i1 + 1, par3, par4 + j1, 3) && this.isSameSapling(par1World, par2 + i1, par3, par4 + j1 + 1, 3) && this.isSameSapling(par1World, par2 + i1 + 1, par3, par4 + j1 + 1, 3))
                     {
-                        object = new NightendGenHuge(true, 10 + par5Random.nextInt(20), 3, 3);
+                        object = new AerobreezeGenHuge(true, 10 + par5Random.nextInt(20), 3, 3);
                         flag = true;
                         break;
                     }
@@ -122,16 +122,16 @@ public class NightendSapling extends BlockFlower
             {
                 j1 = 0;
                 i1 = 0;
-                object = new NightendGen(true, 4 + par5Random.nextInt(7), 3, 3, false);
+                object = new AerobreezeGen(true, 4 + par5Random.nextInt(7), 3, 3, false);
             }
         }
         else
         {
-            object = new NightendGen(true);
+            object = new AerobreezeGen(true);
 
             if (par5Random.nextInt(10) == 0)
             {
-                object = new NightendGenBig(true);
+                object = new AerobreezeGenBig(true);
             }
         }
 
@@ -204,7 +204,7 @@ public class NightendSapling extends BlockFlower
 
         for (int i = 0; i < this.saplingIcon.length; ++i)
         {
-            this.saplingIcon[i] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":" + "nightendSapling" + WOOD_TYPES[i]);
+            this.saplingIcon[i] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":" + "aerobreezeSapling" + WOOD_TYPES[i]);
         }
     }
 }
