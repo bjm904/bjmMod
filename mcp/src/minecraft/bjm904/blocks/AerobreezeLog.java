@@ -46,7 +46,7 @@ public class AerobreezeLog extends BlockRotatedPillar
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return Block.wood.blockID;
+        return Blocks.aerobreezeLog.blockID;
     }
 
     /**
