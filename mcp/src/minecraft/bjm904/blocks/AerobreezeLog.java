@@ -19,7 +19,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class AerobreezeLog extends BlockRotatedPillar
 {
     /** The type of tree this log came from. */
-    public static final String[] woodType = new String[] {"oak", "spruce", "birch", "jungle"};
+    public static final String[] woodType = new String[] {"Oak", "Spruce", "Birch", "Jungle"};
     @SideOnly(Side.CLIENT)
     private Icon[] field_111052_c;
     @SideOnly(Side.CLIENT)
