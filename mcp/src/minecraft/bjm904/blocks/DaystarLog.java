@@ -25,10 +25,12 @@ public class DaystarLog extends BlockRotatedPillar
     @SideOnly(Side.CLIENT)
     private Icon[] tree_top;
 
-    protected DaystarLog(int par1)
+    public DaystarLog(int par1)
     {
         super(par1, Material.wood);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+        this.setHardness(2F);
+        this.setStepSound(soundWoodFootstep);
     }
 
     /**

@@ -33,11 +33,13 @@ public class DaystarLeaves extends BlockLeavesBase implements IShearable
     private Icon[][] iconArray = new Icon[2][];
     int[] adjacentTreeBlocks;
 
-    protected DaystarLeaves(int par1)
+    public DaystarLeaves(int par1)
     {
         super(par1, Material.leaves, false);
         this.setTickRandomly(true);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+        this.setHardness(0.2F);
+        this.setStepSound(soundGrassFootstep);
     }
     /**
      * Called on server worlds only when the block has been replaced by a different block ID, or the same block with a

@@ -25,10 +25,12 @@ public class NightendLog extends BlockRotatedPillar
     @SideOnly(Side.CLIENT)
     private Icon[] tree_top;
 
-    protected NightendLog(int par1)
+    public NightendLog(int par1)
     {
         super(par1, Material.wood);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+        this.setHardness(2F);
+        this.setStepSound(soundWoodFootstep);
     }
 
     /**

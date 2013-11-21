@@ -25,10 +25,12 @@ public class AerobreezeLog extends BlockRotatedPillar
     @SideOnly(Side.CLIENT)
     private Icon[] tree_top;
 
-    protected AerobreezeLog(int par1)
+    public AerobreezeLog(int par1)
     {
         super(par1, Material.wood);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+        this.setHardness(2F);
+        this.setStepSound(soundWoodFootstep);
     }
 
     /**

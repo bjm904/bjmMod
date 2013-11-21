@@ -24,6 +24,8 @@ public class AquaPlank extends Block
     {
         super(par1, Material.wood);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+        this.setHardness(2F);
+        this.setStepSound(soundWoodFootstep);
     }
 
     @SideOnly(Side.CLIENT)

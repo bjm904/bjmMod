@@ -33,11 +33,13 @@ public class AquaLeaves extends BlockLeavesBase implements IShearable
     private Icon[][] iconArray = new Icon[2][];
     int[] adjacentTreeBlocks;
 
-    protected AquaLeaves(int par1)
+    public AquaLeaves(int par1)
     {
         super(par1, Material.leaves, false);
         this.setTickRandomly(true);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+        this.setHardness(0.2F);
+        this.setStepSound(soundGrassFootstep);
     }
 
     @SideOnly(Side.CLIENT)
