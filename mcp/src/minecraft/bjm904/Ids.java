@@ -12,12 +12,17 @@ public class Ids {
 	public static final int macuahuitlIronClub = 15007;
 	public static final int macuahuitlStoneClub = 15008;
 	public static final int macuahuitlWoodClub = 15009;
-	
 	public static final int macuahuitlDiamondStock = 15010;
 	public static final int macuahuitlGoldStock = 15011;
 	public static final int macuahuitlIronStock = 15012;
 	public static final int macuahuitlStoneStock = 15013;
 	public static final int macuahuitlWoodStock = 15014;
+	
+	public static final int lunarium = 15015;
+	public static final int solsteim = 15016;
+	public static final int lunite = 15017;
+	public static final int solidParticle = 15018;
+	public static final int core = 15019;
 	
 	public static final int nightendSapling = 1000;
 	public static final int daystarSapling = 1001;
@@ -36,7 +41,5 @@ public class Ids {
 	public static final int aerobreezeLeaves = 1014;
 	public static final int aquaLeaves = 1015;
 	
-	public static final int lunarium = 1104;
-	public static final int solsteim = 1105;
-	public static final int lunite = 1106;
+
 }

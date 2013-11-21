@@ -41,6 +41,10 @@ public class Names {
 	public static final String solsteim_name = "Solsteim";
 	public static final String lunite_unlocalizedName = "lunite";
 	public static final String lunite_name = "Lunite";
+	public static final String solidParticle_unlocalizedName = "solidParticle";
+	public static final String solidParticle_name = "Solid Particle";
+	public static final String core_unlocalizedName = "core";
+	public static final String core_name = "Core";
 	
 	public static final String[] nightendSapling_unlocalizedName = {"nightendSaplingOak","nightendSaplingSpruce","nightendSaplingBirch","nightendSaplingJungle"};
 	public static final String[] nightendSapling_name = {"Nightend Oak Sapling","Nightend Spruce Sapling","Nightend Birch Sapling","Nightend Jungle Sapling"};

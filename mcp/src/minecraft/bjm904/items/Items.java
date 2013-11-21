@@ -30,6 +30,8 @@ public class Items {
 	public static Item lunarium;
 	public static Item solsteim;
 	public static Item lunite;
+	public static Item solidParticle;
+	public static Item core;
 	
 	public static void init() {
 		macuahuitlDiamond = new MacuahuitlDiamond(Ids.macuahuitlDiamond, EnumToolMaterial.EMERALD);
@@ -53,6 +55,8 @@ public class Items {
 		lunarium = new Lunarium(Ids.lunarium);
 		solsteim = new Solsteim(Ids.solsteim);
 		lunite = new Lunite(Ids.lunite);
+		solidParticle = new SolidParticle(Ids.solidParticle);
+		core = new Core(Ids.core);
 	}
 	public static void addNames() {
 		LanguageRegistry.addName(macuahuitlDiamond, Names.macuahuitlDiamond_name);
@@ -74,5 +78,7 @@ public class Items {
 		LanguageRegistry.addName(lunarium, Names.lunarium_name);
 		LanguageRegistry.addName(solsteim, Names.solsteim_name);
 		LanguageRegistry.addName(lunite, Names.lunite_name);
+		LanguageRegistry.addName(solidParticle, Names.solidParticle_name);
+		LanguageRegistry.addName(core, Names.core_name);
 	}
 }
