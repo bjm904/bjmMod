@@ -44,6 +44,9 @@ public class bjmMod {
 	@EventHandler
 	public static void init( FMLInitializationEvent event ) {
 		LanguageRegistry.instance().addStringLocalization("itemGroup." + ModInfo.NAME, "en_US", ModInfo.NAME);
+		MinecraftForge.EVENT_BUS.register(new Aerobreeze_Bonemeal_Event());
+		MinecraftForge.EVENT_BUS.register(new Aqua_Bonemeal_Event());
+		MinecraftForge.EVENT_BUS.register(new Daystar_Bonemeal_Event());
 		MinecraftForge.EVENT_BUS.register(new Nightend_Bonemeal_Event());
 	}
 
