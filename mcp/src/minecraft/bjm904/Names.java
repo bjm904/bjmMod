@@ -33,11 +33,7 @@ public class Names {
 	public static final String macuahuitlStoneStock_name = "Stone Maquahuitl Stock";
 	public static final String macuahuitlWoodStock_unlocalizedName = "macuahuitlWoodStock";
 	public static final String macuahuitlWoodStock_name = "Wood Maquahuitl Stock";
-	
-	public static final String nightendPlanks_unlocalizedName = "nightendPlanks";
-	public static final String nightendPlanks_name = "Nightend Planks";
-	public static final String nightendLeaves_unlocalizedName = "nightendLeaves";
-	public static final String nightendLeaves_name = "Nightend Leaves";
+
 	
 	public static final String lunarium_unlocalizedName = "lunarium";
 	public static final String lunarium_name = "Lunarium";
@@ -63,4 +59,22 @@ public class Names {
 	public static final String[] aerobreezeLog_name = {"Aerobreeze Oak Log","Aerobreeze Spruce Log","Aerobreeze Birch Log","Aerobreeze Jungle Log"};
 	public static final String[] aquaLog_unlocalizedName = {"aquaLogOak","daquaLogSpruce","aquaLogBirch","aquaLogJungle"};
 	public static final String[] aquaLog_name = {"Aqua-! Oak Log","Aqua-! Spruce Log","Aqua-! Birch Log","Aqua-! Jungle Log"};
+	
+	public static final String[] nightendPlank_unlocalizedName = {"nightendPlankOak","nightendPlankSpruce","nightendPlankBirch","nightendPlankJungle"};
+	public static final String[] nightendPlank_name = {"Nightend Oak Plank","Nightend Spruce Plank","Nightend Birch Plank","Nightend Jungle Plank"};
+	public static final String[] daystarPlank_unlocalizedName = {"daystarPlankOak","daystarPlankSpruce","daystarPlankBirch","daystarPlankJungle"};
+	public static final String[] daystarPlank_name = {"Daystar Oak Plank","Daystar Spruce Plank","Daystar Birch Plank","Daystar Jungle Plank"};
+	public static final String[] aerobreezePlank_unlocalizedName = {"aerobreezePlankOak","aerobreezePlankSpruce","aerobreezePlankBirch","aerobreezePlankJungle"};
+	public static final String[] aerobreezePlank_name = {"Aerobreeze Oak Plank","Aerobreeze Spruce Plank","Aerobreeze Birch Plank","Aerobreeze Jungle Plank"};
+	public static final String[] aquaPlank_unlocalizedName = {"aquaPlankOak","daquaPlankSpruce","aquaPlankBirch","aquaPlankJungle"};
+	public static final String[] aquaPlank_name = {"Aqua-! Oak Plank","Aqua-! Spruce Plank","Aqua-! Birch Plank","Aqua-! Jungle Plank"};
+	
+	public static final String[] nightendLeaves_unlocalizedName = {"nightendLeavesOak","nightendLeavesSpruce","nightendLeavesBirch","nightendLeavesJungle"};
+	public static final String[] nightendLeaves_name = {"Nightend Oak Leaves","Nightend Spruce Leaves","Nightend Birch Leaves","Nightend Jungle Leaves"};
+	public static final String[] daystarLeaves_unlocalizedName = {"daystarLeavesOak","daystarLeavesSpruce","daystarLeavesBirch","daystarLeavesJungle"};
+	public static final String[] daystarLeaves_name = {"Daystar Oak Leaves","Daystar Spruce Leaves","Daystar Birch Leaves","Daystar Jungle Leaves"};
+	public static final String[] aerobreezeLeaves_unlocalizedName = {"aerobreezeLeavesOak","aerobreezeLeavesSpruce","aerobreezeLeavesBirch","aerobreezeLeavesJungle"};
+	public static final String[] aerobreezeLeaves_name = {"Aerobreeze Oak Leaves","Aerobreeze Spruce Leaves","Aerobreeze Birch Leaves","Aerobreeze Jungle Leaves"};
+	public static final String[] aquaLeaves_unlocalizedName = {"aquaLeavesOak","daquaLeavesSpruce","aquaLeavesBirch","aquaLeavesJungle"};
+	public static final String[] aquaLeaves_name = {"Aqua-! Oak Leaves","Aqua-! Spruce Leaves","Aqua-! Birch Leaves","Aqua-! Jungle Leaves"};
 }

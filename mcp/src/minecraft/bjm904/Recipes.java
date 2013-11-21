@@ -9,7 +9,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {
 	public static void init() {
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.nightendPlanks, 4), new ItemStack(Blocks.nightendLog, 1));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.nightendPlank, 4), new ItemStack(Blocks.nightendLog, 1));
 
 		GameRegistry.addRecipe(new ItemStack(Items.macuahuitlDiamond, 1),
 				new Object[] {"  C"," W ","R  ",'R', Block.stone, 'W', Item.stick, 'C', Items.macuahuitlDiamondClub

@@ -27,8 +27,14 @@ public class Ids {
 	public static final int daystarLog = 1005;
 	public static final int aerobreezeLog = 1006;
 	public static final int aquaLog = 1007;
-	public static final int nightendPlanks = 1025;
-	public static final int nightendLeaves = 1026;
+	public static final int nightendPlank = 1008;
+	public static final int daystarPlank = 1009;
+	public static final int aerobreezePlank = 1010;
+	public static final int aquaPlank = 1011;
+	public static final int nightendLeaves = 1012;
+	public static final int daystarLeaves = 1013;
+	public static final int aerobreezeLeaves = 1014;
+	public static final int aquaLeaves = 1015;
 	
 	public static final int lunarium = 1104;
 	public static final int solsteim = 1105;

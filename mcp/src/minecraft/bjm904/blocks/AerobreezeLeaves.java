@@ -22,7 +22,7 @@ import net.minecraftforge.common.IShearable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class NightendLeaves extends BlockLeavesBase implements IShearable
+public class AerobreezeLeaves extends BlockLeavesBase implements IShearable
 {
     public static final String[] LEAF_TYPES = new String[] {"oak", "spruce", "birch", "jungle"};
     public static final String[][] field_94396_b = new String[][] {{"Leaves_oak", "Leaves_spruce", "Leaves_birch", "Leaves_jungle"}, {"Leaves_oak_opaque", "Leaves_spruce_opaque", "Leaves_birch_opaque", "Leaves_jungle_opaque"}};
@@ -33,7 +33,7 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
     private Icon[][] iconArray = new Icon[2][];
     int[] adjacentTreeBlocks;
 
-    protected NightendLeaves(int par1)
+    protected AerobreezeLeaves(int par1)
     {
         super(par1, Material.leaves, false);
         this.setTickRandomly(true);
@@ -413,7 +413,7 @@ public class NightendLeaves extends BlockLeavesBase implements IShearable
 
             for (int j = 0; j < field_94396_b[i].length; ++j)
             {
-                this.iconArray[i][j] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":nightend" + field_94396_b[i][j]);
+                this.iconArray[i][j] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":aerobreeze" + field_94396_b[i][j]);
             }
         }
     }
