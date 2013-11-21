@@ -34,6 +34,27 @@ public class Names {
 	public static final String macuahuitlWoodStock_unlocalizedName = "macuahuitlWoodStock";
 	public static final String macuahuitlWoodStock_name = "Wood Maquahuitl Stock";
 
+	public static final String glaiveDiamond_unlocalizedName = "glaiveDiamond";
+	public static final String glaiveDiamond_name = "Diamond Glaive";
+	public static final String glaiveGold_unlocalizedName = "glaiveGold";
+	public static final String glaiveGold_name = "Gold Glaive";
+	public static final String glaiveIron_unlocalizedName = "glaiveIron";
+	public static final String glaiveIron_name = "Iron Glaive";
+	public static final String glaiveStone_unlocalizedName = "glaiveStone";
+	public static final String glaiveStone_name = "Stone Glaive";
+	public static final String glaiveWood_unlocalizedName = "glaiveWood";
+	public static final String glaiveWood_name = "Wood Glaive";
+	
+	public static final String scytheDiamond_unlocalizedName = "scytheDiamond";
+	public static final String scytheDiamond_name = "Diamond Scythe";
+	public static final String scytheGold_unlocalizedName = "scytheGold";
+	public static final String scytheGold_name = "Gold Scythe";
+	public static final String scytheIron_unlocalizedName = "scytheIron";
+	public static final String scytheIron_name = "Iron Scythe";
+	public static final String scytheStone_unlocalizedName = "scytheStone";
+	public static final String scytheStone_name = "Stone Scythe";
+	public static final String scytheWood_unlocalizedName = "scytheWood";
+	public static final String scytheWood_name = "Wood Scythe";
 	
 	public static final String lunarium_unlocalizedName = "lunarium";
 	public static final String lunarium_name = "Lunarium";

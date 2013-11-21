@@ -3,11 +3,13 @@ package bjm904.items;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import bjm904.Ids;
 import bjm904.Names;
+import bjm904.items.combat.Glaive;
 import bjm904.items.combat.MacuahuitlDiamond;
 import bjm904.items.combat.MacuahuitlGold;
 import bjm904.items.combat.MacuahuitlIron;
 import bjm904.items.combat.MacuahuitlStone;
 import bjm904.items.combat.MacuahuitlWood;
+import bjm904.items.combat.Scythe;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 
@@ -17,6 +19,16 @@ public class Items {
 	public static Item macuahuitlIron;
 	public static Item macuahuitlStone;
 	public static Item macuahuitlWood;
+	public static Item glaiveDiamond;
+	public static Item glaiveGold;
+	public static Item glaiveIron;
+	public static Item glaiveStone;
+	public static Item glaiveWood;
+	public static Item scytheDiamond;
+	public static Item scytheGold;
+	public static Item scytheIron;
+	public static Item scytheStone;
+	public static Item scytheWood;
 	public static Item macuahuitlDiamondClub;
 	public static Item macuahuitlGoldClub;
 	public static Item macuahuitlIronClub;
@@ -39,6 +51,19 @@ public class Items {
 		macuahuitlIron = new MacuahuitlIron(Ids.macuahuitlIron, EnumToolMaterial.IRON);
 		macuahuitlStone = new MacuahuitlStone(Ids.macuahuitlStone, EnumToolMaterial.STONE);
 		macuahuitlWood = new MacuahuitlWood(Ids.macuahuitlWood, EnumToolMaterial.WOOD);
+		
+		glaiveDiamond = new Glaive(Ids.glaiveDiamond, EnumToolMaterial.EMERALD, 3000, 40F, Names.glaiveDiamond_unlocalizedName);
+		glaiveGold = new Glaive(Ids.glaiveGold, EnumToolMaterial.GOLD, 1, 40F, Names.glaiveGold_unlocalizedName);
+		glaiveIron = new Glaive(Ids.glaiveIron, EnumToolMaterial.IRON, 1, 40F, Names.glaiveIron_unlocalizedName);
+		glaiveStone = new Glaive(Ids.glaiveStone, EnumToolMaterial.STONE, 1, 40F, Names.glaiveStone_unlocalizedName);
+		glaiveWood = new Glaive(Ids.glaiveWood, EnumToolMaterial.WOOD, 1, 40F, Names.glaiveWood_unlocalizedName);
+
+		
+		scytheDiamond = new Scythe(Ids.scytheDiamond, EnumToolMaterial.EMERALD, 3000, 40F, Names.scytheDiamond_unlocalizedName);
+		scytheGold = new Scythe(Ids.scytheGold, EnumToolMaterial.GOLD, 1, 40F, Names.scytheGold_unlocalizedName);
+		scytheIron = new Scythe(Ids.scytheIron, EnumToolMaterial.IRON, 1, 40F, Names.scytheIron_unlocalizedName);
+		scytheStone = new Scythe(Ids.scytheStone, EnumToolMaterial.STONE, 1, 40F, Names.scytheStone_unlocalizedName);
+		scytheWood = new Scythe(Ids.scytheWood, EnumToolMaterial.WOOD, 1, 40F, Names.scytheWood_unlocalizedName);
 		
 		macuahuitlDiamondClub = new MacuahuitlDiamondClub(Ids.macuahuitlDiamondClub);
 		macuahuitlGoldClub = new MacuahuitlGoldClub(Ids.macuahuitlGoldClub);
@@ -74,6 +99,18 @@ public class Items {
 		LanguageRegistry.addName(macuahuitlIronStock, Names.macuahuitlIronStock_name);
 		LanguageRegistry.addName(macuahuitlStoneStock, Names.macuahuitlStoneStock_name);
 		LanguageRegistry.addName(macuahuitlWoodStock, Names.macuahuitlWoodStock_name);
+		
+		LanguageRegistry.addName(glaiveDiamond, Names.glaiveDiamond_name);
+		LanguageRegistry.addName(glaiveGold, Names.glaiveGold_name);
+		LanguageRegistry.addName(glaiveIron, Names.glaiveIron_name);
+		LanguageRegistry.addName(glaiveStone, Names.glaiveStone_name);
+		LanguageRegistry.addName(glaiveWood, Names.glaiveWood_name);
+		
+		LanguageRegistry.addName(scytheDiamond, Names.scytheDiamond_name);
+		LanguageRegistry.addName(scytheGold, Names.scytheGold_name);
+		LanguageRegistry.addName(scytheIron, Names.scytheIron_name);
+		LanguageRegistry.addName(scytheStone, Names.scytheStone_name);
+		LanguageRegistry.addName(scytheWood, Names.scytheWood_name);
 		
 		LanguageRegistry.addName(lunarium, Names.lunarium_name);
 		LanguageRegistry.addName(solsteim, Names.solsteim_name);

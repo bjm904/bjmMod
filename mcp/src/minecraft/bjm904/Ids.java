@@ -24,6 +24,20 @@ public class Ids {
 	public static final int solidParticle = 15018;
 	public static final int core = 15019;
 	
+	public static final int glaiveDiamond = 15020;
+	public static final int glaiveGold = 15021;
+	public static final int glaiveIron = 15022;
+	public static final int glaiveStone = 15023;
+	public static final int glaiveWood = 15024;
+	
+	public static final int scytheDiamond = 15025;
+	public static final int scytheGold = 15026;
+	public static final int scytheIron = 15027;
+	public static final int scytheStone = 15028;
+	public static final int scytheWood = 15029;
+	
+	
+	
 	public static final int nightendSapling = 1000;
 	public static final int daystarSapling = 1001;
 	public static final int aerobreezeSapling = 1002;
