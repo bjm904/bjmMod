@@ -1,0 +1,19 @@
+[
+{
+"modid": "bjmMod",
+"name": "Bjm Mod",
+"description": "Lots of stuff",
+"version": "Pre-dev",
+"url": "http://thefourthdimensi0n.com/wiki",
+"authorList": [
+"bjm904",
+"solsoul"
+],
+"credits": "",
+"logoFile": "assets/bjmmod/logo.png",
+"screenshots": [],
+"dependencies": [
+],
+"mcversion": "1.6.4"
+}
+]
