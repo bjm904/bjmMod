@@ -25,6 +25,8 @@ public class Ids {
 	public static final int nightendLeaves = 1002;
 	public static final int nightendSapling = 1003;
 	
+	public static final int daystarSapling = 1007;
+	
 	public static final int lunarium = 1004;
 	public static final int solsteim = 1005;
 	public static final int lunite = 1006;

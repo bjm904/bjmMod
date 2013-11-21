@@ -50,4 +50,17 @@ public class Names {
 	public static final String solsteim_name = "Solsteim";
 	public static final String lunite_unlocalizedName = "lunite";
 	public static final String lunite_name = "Lunite";
+	
+	public static final String[] daystarSapling_unlocalizedName = {
+		"daystarSaplingOak",
+		"daystarSaplingSpruce",
+		"daystarSaplingBirch",
+		"daystarSaplingJungle"
+		};
+	public static final String[] daystarSapling_name = {
+		"Daystar Oak Sapling",
+		"Daystar Spruce Sapling",
+		"Daystar Birch Sapling",
+		"Daystar Jungle Sapling"
+		};
 }
