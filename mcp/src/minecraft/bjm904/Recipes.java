@@ -72,8 +72,37 @@ public class Recipes {
 				new Object[] {"ODO",'O', Block.obsidian, 'D', Block.planks
 				});
 		
-		GameRegistry.addRecipe(new ItemStack(Blocks.nightendSapling, 1),
-				new Object[] {"LLL","LSL","LLL",'S', Block.sapling, 'L', Items.lunite
-				});
+		GameRegistry.addRecipe(new ItemStack(Blocks.aerobreezeSapling, 1, 0),//Oak
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 0), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.aquaSapling, 1, 0),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 0), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.daystarSapling, 1, 0),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 0), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.nightendSapling, 1, 0),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 0), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.aerobreezeSapling, 1, 1),//Spruce
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 1), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.aquaSapling, 1, 1),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 1), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.daystarSapling, 1, 1),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 1), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.nightendSapling, 1, 1),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 1), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.aerobreezeSapling, 1, 2),//Birch
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 2), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.aquaSapling, 1, 2),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 2), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.daystarSapling, 1, 2),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 2), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.nightendSapling, 1, 2),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 2), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.aerobreezeSapling, 1, 3),//Jungle
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 3), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.aquaSapling, 1, 3),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 3), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.daystarSapling, 1, 3),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 3), 'L', Items.lunite});
+		GameRegistry.addRecipe(new ItemStack(Blocks.nightendSapling, 1, 3),
+				new Object[] {"LLL","LSL","LLL",'S', new ItemStack(Block.sapling, 1, 3), 'L', Items.lunite});
 	}
 }
