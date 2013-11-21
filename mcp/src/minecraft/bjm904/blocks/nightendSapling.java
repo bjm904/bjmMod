@@ -7,7 +7,6 @@ import bjm904.ModInfo;
 import bjm904.Names;
 import bjm904.bjmMod;
 import bjm904.treeGen.NightendGen;
-import bjm904.treeGen.NightendGenBig;
 import bjm904.treeGen.NightendGenForest;
 import bjm904.treeGen.NightendGenHuge;
 import bjm904.treeGen.NightendGenTaiga;
@@ -128,11 +127,6 @@ public class NightendSapling extends BlockFlower
         else
         {
             object = new NightendGen(true);
-
-            if (par5Random.nextInt(10) == 0)
-            {
-                object = new NightendGenBig(true);
-            }
         }
 
         if (flag)

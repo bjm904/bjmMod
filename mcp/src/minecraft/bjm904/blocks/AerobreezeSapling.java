@@ -7,7 +7,6 @@ import bjm904.ModInfo;
 import bjm904.Names;
 import bjm904.bjmMod;
 import bjm904.treeGen.AerobreezeGen;
-import bjm904.treeGen.AerobreezeGenBig;
 import bjm904.treeGen.AerobreezeGenForest;
 import bjm904.treeGen.AerobreezeGenHuge;
 import bjm904.treeGen.AerobreezeGenTaiga;
@@ -128,11 +127,6 @@ public class AerobreezeSapling extends BlockFlower
         else
         {
             object = new AerobreezeGen(true);
-
-            if (par5Random.nextInt(10) == 0)
-            {
-                object = new AerobreezeGenBig(true);
-            }
         }
 
         if (flag)

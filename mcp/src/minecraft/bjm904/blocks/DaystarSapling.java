@@ -7,7 +7,6 @@ import bjm904.ModInfo;
 import bjm904.Names;
 import bjm904.bjmMod;
 import bjm904.treeGen.DaystarGen;
-import bjm904.treeGen.DaystarGenBig;
 import bjm904.treeGen.DaystarGenForest;
 import bjm904.treeGen.DaystarGenHuge;
 import bjm904.treeGen.DaystarGenTaiga;
@@ -128,11 +127,6 @@ public class DaystarSapling extends BlockFlower
         else
         {
             object = new DaystarGen(true);
-
-            if (par5Random.nextInt(10) == 0)
-            {
-                object = new DaystarGenBig(true);
-            }
         }
 
         if (flag)

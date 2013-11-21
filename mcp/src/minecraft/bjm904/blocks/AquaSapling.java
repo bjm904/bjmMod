@@ -7,7 +7,6 @@ import bjm904.ModInfo;
 import bjm904.Names;
 import bjm904.bjmMod;
 import bjm904.treeGen.AquaGen;
-import bjm904.treeGen.AquaGenBig;
 import bjm904.treeGen.AquaGenForest;
 import bjm904.treeGen.AquaGenHuge;
 import bjm904.treeGen.AquaGenTaiga;
@@ -128,11 +127,6 @@ public class AquaSapling extends BlockFlower
         else
         {
             object = new AquaGen(true);
-
-            if (par5Random.nextInt(10) == 0)
-            {
-                object = new AquaGenBig(true);
-            }
         }
 
         if (flag)
