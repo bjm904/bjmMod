@@ -30,6 +30,7 @@ public class bjmMod {
 	
 	@EventHandler
 	public static void preInit( FMLPreInitializationEvent event ) {
+		ConfigHandler.init(event.getSuggestedConfigurationFile());
 		proxy.initRenderers();
 		proxy.initSounds();
 		Blocks.init();
