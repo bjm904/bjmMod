@@ -1,4 +1,4 @@
-package bjm904.items;
+package bjm904.items.combat;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -22,20 +22,20 @@ import com.google.common.collect.Multimap;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MacuahuitlWood extends Item
+public class MacuahuitlDiamond extends Item
 {
     private float weaponDamage;
     private final EnumToolMaterial toolMaterial;
 
-    public MacuahuitlWood(int par1, EnumToolMaterial par2EnumToolMaterial)
+    public MacuahuitlDiamond(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1);
         this.toolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
-        this.setMaxDamage(120);
+        this.setMaxDamage(3000);
         this.setCreativeTab(bjmMod.CreativeTabBjmMod);
-        this.weaponDamage = 10.0F;
-        this.setUnlocalizedName(Names.macuahuitlWood_unlocalizedName);
+        this.weaponDamage = 20.0F;
+        this.setUnlocalizedName(Names.macuahuitlDiamond_unlocalizedName);
     }
 
     /**
@@ -50,7 +50,7 @@ public class MacuahuitlWood extends Item
         }
         else if (par2Block.blockMaterial == Material.wood){
         	
-        	return 2.0F;
+        	return 8.0F;
         }
         else
         {
@@ -155,11 +155,11 @@ public class MacuahuitlWood extends Item
         multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifier", (double)this.weaponDamage, 0));
         return multimap;
     }
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {
-		itemIcon = icon.registerIcon(ModInfo.texture + ":" + Names.macuahuitlWood_unlocalizedName);
+		itemIcon = icon.registerIcon(ModInfo.texture + ":" + Names.macuahuitlDiamond_unlocalizedName);
 	}
 	
 }

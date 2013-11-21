@@ -3,6 +3,11 @@ package bjm904.items;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import bjm904.Ids;
 import bjm904.Names;
+import bjm904.items.combat.MacuahuitlDiamond;
+import bjm904.items.combat.MacuahuitlGold;
+import bjm904.items.combat.MacuahuitlIron;
+import bjm904.items.combat.MacuahuitlStone;
+import bjm904.items.combat.MacuahuitlWood;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 
