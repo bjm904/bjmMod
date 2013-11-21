@@ -2,6 +2,8 @@ package bjm904.treeGen;
 
 import java.util.Random;
 
+import bjm904.blocks.NightendSapling;
+import bjm904.blocks.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.world.World;
@@ -72,7 +74,7 @@ public class NightendGenForest extends WorldGenerator
             {
                 i1 = par1World.getBlockId(par3, par4 - 1, par5);
                 Block soil = Block.blocksList[i1];
-                boolean isValidSoil = soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (BlockSapling)Block.sapling);
+                boolean isValidSoil = soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (NightendSapling)Blocks.nightendSapling);
 
                 if (isValidSoil && par4 < 256 - l - 1)
                 {
@@ -99,7 +101,7 @@ public class NightendGenForest extends WorldGenerator
 
                                     if (block == null || block.canBeReplacedByLeaves(par1World, l1, i2, k2))
                                     {
-                                        this.setBlockAndMetadata(par1World, l1, i2, k2, Block.leaves.blockID, 2);
+                                        this.setBlockAndMetadata(par1World, l1, i2, k2, Blocks.nightendLeaves.blockID, 2);
                                     }
                                 }
                             }
@@ -114,7 +116,7 @@ public class NightendGenForest extends WorldGenerator
 
                         if (j1 == 0 || block == null || block.isLeaves(par1World, par3, par4 + i2, par5))
                         {
-                            this.setBlockAndMetadata(par1World, par3, par4 + i2, par5, Block.wood.blockID, 2);
+                            this.setBlockAndMetadata(par1World, par3, par4 + i2, par5, Blocks.nightendLog.blockID, 2);
                         }
                     }
 

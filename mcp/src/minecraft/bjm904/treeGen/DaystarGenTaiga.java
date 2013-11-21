@@ -2,6 +2,8 @@ package bjm904.treeGen;
 
 import java.util.Random;
 
+import bjm904.blocks.DaystarSapling;
+import bjm904.blocks.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.world.World;
@@ -74,7 +76,7 @@ public class DaystarGenTaiga extends WorldGenerator
             {
                 l1 = par1World.getBlockId(par3, par4 - 1, par5);
                 Block soil = Block.blocksList[l1];
-                boolean isValidSoil = soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (BlockSapling)Block.sapling);
+                boolean isValidSoil = soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (DaystarSapling)Blocks.daystarSapling);
 
                 if (isValidSoil && par4 < 256 - l - 1)
                 {
@@ -102,7 +104,7 @@ public class DaystarGenTaiga extends WorldGenerator
                                 if ((Math.abs(k3) != k2 || Math.abs(i4) != k2 || k2 <= 0) &&
                                     (block == null || block.canBeReplacedByLeaves(par1World, i3, j3, l3)))
                                 {
-                                    this.setBlockAndMetadata(par1World, i3, j3, l3, Block.leaves.blockID, 1);
+                                    this.setBlockAndMetadata(par1World, i3, j3, l3, Blocks.daystarLeaves.blockID, 1);
                                 }
                             }
                         }
@@ -134,7 +136,7 @@ public class DaystarGenTaiga extends WorldGenerator
 
                         if (i3 == 0 || block == null || block.isLeaves(par1World, par3, par4 + j3, par5))
                         {
-                            this.setBlockAndMetadata(par1World, par3, par4 + j3, par5, Block.wood.blockID, 1);
+                            this.setBlockAndMetadata(par1World, par3, par4 + j3, par5, Blocks.daystarLog.blockID, 1);
                         }
                     }
 

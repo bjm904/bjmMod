@@ -2,6 +2,8 @@ package bjm904.treeGen;
 
 import java.util.Random;
 
+import bjm904.blocks.NightendSapling;
+import bjm904.blocks.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.util.MathHelper;
@@ -67,7 +69,7 @@ public class NightendGenHuge extends WorldGenerator
                                l1 != Block.grass.blockID &&
                                l1 != Block.dirt.blockID &&
                                (Block.blocksList[l1] != null && !Block.blocksList[l1].isWood(par1World, j1, i1, k1)) &&
-                               l1 != Block.sapling.blockID)
+                               l1 != Blocks.nightendSapling.blockID)
                             {
                                 flag = false;
                             }
@@ -89,7 +91,7 @@ public class NightendGenHuge extends WorldGenerator
                 i1 = par1World.getBlockId(par3, par4 - 1, par5);
 
                 Block soil = Block.blocksList[i1];
-                boolean isValidSoil = soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (BlockSapling)Block.sapling);
+                boolean isValidSoil = soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (NightendSapling)Blocks.nightendSapling);
 
                 if (isValidSoil && par4 < 256 - l - 1)
                 {
@@ -110,7 +112,7 @@ public class NightendGenHuge extends WorldGenerator
                         {
                             k1 = par3 + (int)(1.5F + MathHelper.cos(f) * (float)j2);
                             l1 = par5 + (int)(1.5F + MathHelper.sin(f) * (float)j2);
-                            this.setBlockAndMetadata(par1World, k1, i2 - 3 + j2 / 2, l1, Block.wood.blockID, this.woodMetadata);
+                            this.setBlockAndMetadata(par1World, k1, i2 - 3 + j2 / 2, l1, Blocks.nightendLog.blockID, this.woodMetadata);
                         }
                     }
 
@@ -120,7 +122,7 @@ public class NightendGenHuge extends WorldGenerator
 
                         if (k1 == 0 || Block.blocksList[k1] == null || Block.blocksList[k1].isLeaves(par1World, par3, par4 + j1, par5))
                         {
-                            this.setBlockAndMetadata(par1World, par3, par4 + j1, par5, Block.wood.blockID, this.woodMetadata);
+                            this.setBlockAndMetadata(par1World, par3, par4 + j1, par5, Blocks.nightendLog.blockID, this.woodMetadata);
 
                             if (j1 > 0)
                             {
@@ -142,7 +144,7 @@ public class NightendGenHuge extends WorldGenerator
 
                             if (k1 == 0 || Block.blocksList[k1] == null || Block.blocksList[k1].isLeaves(par1World, par3 + 1, par4 + j1, par5))
                             {
-                                this.setBlockAndMetadata(par1World, par3 + 1, par4 + j1, par5, Block.wood.blockID, this.woodMetadata);
+                                this.setBlockAndMetadata(par1World, par3 + 1, par4 + j1, par5, Blocks.nightendLog.blockID, this.woodMetadata);
 
                                 if (j1 > 0)
                                 {
@@ -162,7 +164,7 @@ public class NightendGenHuge extends WorldGenerator
 
                             if (k1 == 0 || Block.blocksList[k1] == null || Block.blocksList[k1].isLeaves(par1World, par3 + 1, par4 + j1, par5 + 1))
                             {
-                                this.setBlockAndMetadata(par1World, par3 + 1, par4 + j1, par5 + 1, Block.wood.blockID, this.woodMetadata);
+                                this.setBlockAndMetadata(par1World, par3 + 1, par4 + j1, par5 + 1, Blocks.nightendLog.blockID, this.woodMetadata);
 
                                 if (j1 > 0)
                                 {
@@ -182,7 +184,7 @@ public class NightendGenHuge extends WorldGenerator
 
                             if (k1 == 0 || Block.blocksList[k1] == null || Block.blocksList[k1].isLeaves(par1World, par3, par4 + j1, par5 + 1))
                             {
-                                this.setBlockAndMetadata(par1World, par3, par4 + j1, par5 + 1, Block.wood.blockID, this.woodMetadata);
+                                this.setBlockAndMetadata(par1World, par3, par4 + j1, par5 + 1, Blocks.nightendLog.blockID, this.woodMetadata);
 
                                 if (j1 > 0)
                                 {
@@ -238,7 +240,7 @@ public class NightendGenHuge extends WorldGenerator
 
                         if (block == null || block.canBeReplacedByLeaves(par1World, l1, i1, j2))
                         {
-                            this.setBlockAndMetadata(par1World, l1, i1, j2, Block.leaves.blockID, this.leavesMetadata);
+                            this.setBlockAndMetadata(par1World, l1, i1, j2, Blocks.nightendLeaves.blockID, this.leavesMetadata);
                         }
                     }
                 }
