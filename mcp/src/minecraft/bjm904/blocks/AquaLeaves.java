@@ -37,7 +37,7 @@ public class AquaLeaves extends BlockLeavesBase implements IShearable
     {
         super(par1, Material.leaves, false);
         this.setTickRandomly(true);
-        this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+        this.setCreativeTab(bjmMod.CreativeTabBjmModTree);
         this.setHardness(0.2F);
         this.setStepSound(soundGrassFootstep);
     }

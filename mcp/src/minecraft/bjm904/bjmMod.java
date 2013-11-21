@@ -25,6 +25,7 @@ public class bjmMod {
 	public static CommonProxy proxy;
 	
 	public static CreativeTabs CreativeTabBjmMod = new CreativeTabBjmMod(CreativeTabs.getNextID(), ModInfo.NAME);
+	public static CreativeTabs CreativeTabBjmModTree = new CreativeTabBjmModTree(CreativeTabs.getNextID(), ModInfo.NAME+" Trees");
 	
 	
 	@EventHandler

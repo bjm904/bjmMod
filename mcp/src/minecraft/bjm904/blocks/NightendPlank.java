@@ -23,7 +23,7 @@ public class NightendPlank extends Block
     public NightendPlank(int par1)
     {
         super(par1, Material.wood);
-        this.setCreativeTab(bjmMod.CreativeTabBjmMod);
+        this.setCreativeTab(bjmMod.CreativeTabBjmModTree);
         this.setHardness(2F);
         this.setStepSound(soundWoodFootstep);
     }
