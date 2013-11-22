@@ -11,7 +11,7 @@ Configuration config = new Configuration(configFile);
 
 config.load();
 
-
+Ids.bloodBag = config.getItem("Blood Bag", Ids.bloodBag_default).getInt() - 256;
 Ids.bloodBagBat = config.getItem("Blood Bag Bat", Ids.bloodBagBat_default).getInt() - 256;
 Ids.bloodBagBlaze = config.getItem("Blood Bag Blaze", Ids.bloodBagBlaze_default).getInt() - 256;
 Ids.bloodBagCaveSpider = config.getItem("Blood Bag CaveSpider", Ids.bloodBagCaveSpider_default).getInt() - 256;

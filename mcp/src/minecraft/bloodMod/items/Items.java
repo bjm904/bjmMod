@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class Items {
+	public static Item bloodBag;
 	public static Item bloodBagBat;
 	public static Item bloodBagBlaze;
 	public static Item bloodBagCaveSpider;
@@ -41,6 +42,7 @@ public class Items {
 	
 	public static void init() {
 		
+		bloodBag = new BloodBagBat(Ids.bloodBag);
 		bloodBagBat = new BloodBagBat(Ids.bloodBagBat);
 		bloodBagBlaze = new BloodBagBlaze(Ids.bloodBagBlaze);
 		bloodBagCaveSpider = new BloodBagCaveSpider(Ids.bloodBagCaveSpider);

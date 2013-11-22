@@ -1,6 +1,8 @@
 package bloodMod;
 
 public class Ids {
+	public static int bloodBag;
+	public static final int bloodBag_default = 2799;
 	public static int bloodBagBat;
 	public static final int bloodBagBat_default = 2800;
 	public static int bloodBagBlaze;

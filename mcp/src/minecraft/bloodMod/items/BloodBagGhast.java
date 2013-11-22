@@ -30,6 +30,7 @@ return Names.bloodBagGhast_unlocalizedName[itemstack.getItemDamage()];
 public static Icon[] icons;
 
 private static final String[] ICON = {
+"bloodBag0",
 "bloodBag1",
 "bloodBag2",
 "bloodBag3",
@@ -59,8 +60,8 @@ return icons[damage];
 }
 @Override
 public void getSubItems(int id, CreativeTabs tab, List list) {
-for(int i = 0; i < icons.length; i++) {
-ItemStack itemstack = new ItemStack(id, 1, i);
+for(int i = 9; i < icons.length-1; i++) {
+ItemStack itemstack = new ItemStack(id, 1, i+1);
 list.add(itemstack);
 }
 }

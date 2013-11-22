@@ -1,7 +1,7 @@
 package bloodMod;
 
+import bloodMod.items.Items;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
 public class Tab extends CreativeTabs{
 
@@ -11,6 +11,6 @@ public class Tab extends CreativeTabs{
 	}
 	@Override
 	public int getTabIconItemIndex() {
-		return Item.appleGold.itemID; 
+		return Items.bloodBagBat.itemID; 
 	}
 }

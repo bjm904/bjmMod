@@ -14,8 +14,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
 
-public class BloodBagSnowGolem extends Item {
-public BloodBagSnowGolem(int id) {
+public class BloodBag extends Item {
+public BloodBag(int id) {
 super(id);
 setCreativeTab(bloodMod.tabBlood);
 setHasSubtypes(true);
@@ -23,14 +23,13 @@ setHasSubtypes(true);
 
 @Override
 public String getUnlocalizedName(ItemStack itemstack) {
-return Names.bloodBagSnowGolem_unlocalizedName[itemstack.getItemDamage()];
+return Names.bloodBag_unlocalizedName[itemstack.getItemDamage()];
 }
 
 @SideOnly(Side.CLIENT)
 public static Icon[] icons;
 
 private static final String[] ICON = {
-"bloodBag0",
 "bloodBag1",
 "bloodBag2",
 "bloodBag3",
@@ -60,8 +59,8 @@ return icons[damage];
 }
 @Override
 public void getSubItems(int id, CreativeTabs tab, List list) {
-for(int i = 9; i < icons.length-1; i++) {
-ItemStack itemstack = new ItemStack(id, 1, i+1);
+for(int i = 0; i < icons.length; i++) {
+ItemStack itemstack = new ItemStack(id, 1, i);
 list.add(itemstack);
 }
 }
