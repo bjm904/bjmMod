@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import bjmMod.ModInfo;
+import bjmMod.Names;
 import bjmMod.bjmMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
@@ -32,7 +33,9 @@ public class AquaLog extends BlockRotatedPillar
         this.setHardness(2F);
         this.setStepSound(soundWoodFootstep);
     }
-
+    public String getUnlocalizedName(ItemStack itemstack) {
+    return Names.aquaLog_unlocalizedName[itemstack.getItemDamage()];
+    }
     /**
      * Returns the quantity of items to drop on block destruction.
      */

@@ -2,7 +2,7 @@ package bloodMod;
 
 public class Ids {
 	public static int bloodBag;
-	public static final int bloodBag_default = 2799;
+	public static final int bloodBag_default = 2831;
 	public static int bloodBagBat;
 	public static final int bloodBagBat_default = 2800;
 	public static int bloodBagBlaze;
@@ -63,6 +63,8 @@ public class Ids {
 	public static final int bloodBagZombiePigman_default = 2828;
 	public static int bloodBagZombieVillager;
 	public static final int bloodBagZombieVillager_default = 2829;
+	public static int needle;
+	public static final int needle_default = 2830;
 	
 
 }

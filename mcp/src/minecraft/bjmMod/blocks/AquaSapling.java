@@ -25,7 +25,7 @@ public class AquaSapling extends BlockFlower
 {
     public static final String[] WOOD_TYPES = new String[] {"Oak", "Spruce", "Birch", "Jungle"};
     @SideOnly(Side.CLIENT)
-    private Icon[] saplingIcon;
+    private Icon[] iconArray;
 
     public AquaSapling(int par1)
     {
@@ -34,7 +34,9 @@ public class AquaSapling extends BlockFlower
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
         this.setCreativeTab(bjmMod.CreativeTabBjmModTree);
     }
-    
+    public String getUnlocalizedName(ItemStack itemstack) {
+    return Names.aquaSapling_unlocalizedName[itemstack.getItemDamage()];
+    }
     /**
      * Ticks the block if it's been scheduled
      */
@@ -58,8 +60,12 @@ public class AquaSapling extends BlockFlower
      */
     public Icon getIcon(int par1, int par2)
     {
-        par2 &= 3;
-        return this.saplingIcon[par2];
+        if (par2 < 0 || par2 >= this.iconArray.length)
+        {
+            par2 = 0;
+        }
+
+        return this.iconArray[par2];
     }
 
     public void markOrGrowMarked(World par1World, int par2, int par3, int par4, Random par5Random)
@@ -194,11 +200,11 @@ public class AquaSapling extends BlockFlower
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.saplingIcon = new Icon[WOOD_TYPES.length];
+        this.iconArray = new Icon[WOOD_TYPES.length];
 
-        for (int i = 0; i < this.saplingIcon.length; ++i)
+        for (int i = 0; i < this.iconArray.length; ++i)
         {
-            this.saplingIcon[i] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":" + "aquaSapling" + WOOD_TYPES[i]);
+            this.iconArray[i] = par1IconRegister.registerIcon(ModInfo.texture.toLowerCase() + ":" + "aquaSapling" + WOOD_TYPES[i]);
         }
     }
 }

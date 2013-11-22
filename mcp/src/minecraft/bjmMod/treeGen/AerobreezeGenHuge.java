@@ -32,7 +32,7 @@ public class AerobreezeGenHuge extends WorldGenerator
 
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
     {
-        int l = par2Random.nextInt(3) + this.baseHeight;
+        int l = 30 + this.baseHeight;
         boolean flag = true;
 
         if (par4 >= 1 && par4 + l + 1 <= 256)
@@ -108,7 +108,7 @@ public class AerobreezeGenHuge extends WorldGenerator
                         l1 = par5 + (int)(0.5F + MathHelper.sin(f) * 4.0F);
                         this.growLeaves(par1World, k1, l1, i2, 0, par2Random);
 
-                        for (int j2 = 0; j2 < 5; ++j2)
+                        for (int j2 = 0; j2 < 55; ++j2)//blocks in leaves
                         {
                             k1 = par3 + (int)(1.5F + MathHelper.cos(f) * (float)j2);
                             l1 = par5 + (int)(1.5F + MathHelper.sin(f) * (float)j2);
@@ -123,6 +123,8 @@ public class AerobreezeGenHuge extends WorldGenerator
                         if (k1 == 0 || Block.blocksList[k1] == null || Block.blocksList[k1].isLeaves(par1World, par3, par4 + j1, par5))
                         {
                             this.setBlockAndMetadata(par1World, par3, par4 + j1, par5, Blocks.aerobreezeLog.blockID, this.woodMetadata);
+                            this.setBlockAndMetadata(par1World, par3+1, par4 + j1, par5, Blocks.aerobreezeLog.blockID, this.woodMetadata);
+                            this.setBlockAndMetadata(par1World, par3+2, par4 + j1, par5+1, Blocks.aerobreezeLog.blockID, this.woodMetadata);
 
                             if (j1 > 0)
                             {
@@ -179,6 +181,7 @@ public class AerobreezeGenHuge extends WorldGenerator
                                     }
                                 }
                             }
+                            
 
                             k1 = par1World.getBlockId(par3, par4 + j1, par5 + 1);
 
@@ -229,7 +232,7 @@ public class AerobreezeGenHuge extends WorldGenerator
             {
                 int i2 = l1 - par2;
 
-                for (int j2 = par3 - k1; j2 <= par3 + k1 + 1; ++j2)
+                for (int j2 = par3 - k1; j2 <= par3 + k1 + 100; ++j2)
                 {
                     int k2 = j2 - par3;
 

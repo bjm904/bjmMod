@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import bjmMod.ModInfo;
+import bjmMod.Names;
 import bjmMod.bjmMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
@@ -40,6 +41,9 @@ public class DaystarLeaves extends BlockLeavesBase implements IShearable
         this.setCreativeTab(bjmMod.CreativeTabBjmModTree);
         this.setHardness(0.2F);
         this.setStepSound(soundGrassFootstep);
+    }
+    public String getUnlocalizedName(ItemStack itemstack) {
+    return Names.daystarLeaves_unlocalizedName[itemstack.getItemDamage()];
     }
     /**
      * Called on server worlds only when the block has been replaced by a different block ID, or the same block with a

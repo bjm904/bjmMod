@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import bjmMod.ModInfo;
+import bjmMod.Names;
 import bjmMod.bjmMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
@@ -41,13 +42,8 @@ public class AquaLeaves extends BlockLeavesBase implements IShearable
         this.setHardness(0.2F);
         this.setStepSound(soundGrassFootstep);
     }
-
-    @SideOnly(Side.CLIENT)
-    public int getBlockColor()
-    {
-        double d0 = 0.5D;
-        double d1 = 1.0D;
-        return ColorizerFoliage.getFoliageColor(d0, d1);
+    public String getUnlocalizedName(ItemStack itemstack) {
+    return Names.aquaLeaves_unlocalizedName[itemstack.getItemDamage()];
     }
     /**
      * Called on server worlds only when the block has been replaced by a different block ID, or the same block with a

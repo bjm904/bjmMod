@@ -34,7 +34,9 @@ public class DaystarSapling extends BlockFlower
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
         this.setCreativeTab(bjmMod.CreativeTabBjmModTree);
     }
-    
+    public String getUnlocalizedName(ItemStack itemstack) {
+    return Names.daystarSapling_unlocalizedName[itemstack.getItemDamage()];
+    }
     /**
      * Ticks the block if it's been scheduled
      */

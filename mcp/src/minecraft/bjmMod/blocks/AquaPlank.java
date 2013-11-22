@@ -3,6 +3,7 @@ package bjmMod.blocks;
 import java.util.List;
 
 import bjmMod.ModInfo;
+import bjmMod.Names;
 import bjmMod.bjmMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -27,7 +28,9 @@ public class AquaPlank extends Block
         this.setHardness(2F);
         this.setStepSound(soundWoodFootstep);
     }
-
+    public String getUnlocalizedName(ItemStack itemstack) {
+    return Names.aquaPlank_unlocalizedName[itemstack.getItemDamage()];
+    }
     @SideOnly(Side.CLIENT)
 
     /**

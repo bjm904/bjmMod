@@ -40,9 +40,11 @@ public class Items {
 	public static Item bloodBagZombiePigman;
 	public static Item bloodBagZombieVillager;
 	
+	public static Item needle;
+	
 	public static void init() {
 		
-		bloodBag = new BloodBagBat(Ids.bloodBag);
+		bloodBag = new BloodBag(Ids.bloodBag);
 		bloodBagBat = new BloodBagBat(Ids.bloodBagBat);
 		bloodBagBlaze = new BloodBagBlaze(Ids.bloodBagBlaze);
 		bloodBagCaveSpider = new BloodBagCaveSpider(Ids.bloodBagCaveSpider);
@@ -74,9 +76,14 @@ public class Items {
 		bloodBagZombiePigman = new BloodBagZombiePigman(Ids.bloodBagZombiePigman);
 		bloodBagZombieVillager = new BloodBagZombieVillager(Ids.bloodBagZombieVillager);
 		
+		needle = new Needle(Ids.needle);
+		
 	}
 	public static void addNames() {
 		//LanguageRegistry.addName(macuahuitlDiamond, Names.macuahuitlDiamond_name);
+		for(int i = 0; i < Names.bloodBag_name.length; i++) {
+			LanguageRegistry.addName(new ItemStack(bloodBag, 1, i), Names.bloodBag_name[i]);
+			}
 		for(int i = 0; i < Names.bloodBagBat_name.length; i++) {
 			LanguageRegistry.addName(new ItemStack(bloodBagBat, 1, i), Names.bloodBagBat_name[i]);
 			}
@@ -167,6 +174,7 @@ public class Items {
 		for(int i = 0; i < Names.bloodBagZombieVillager_name.length; i++) {
 			LanguageRegistry.addName(new ItemStack(bloodBagZombieVillager, 1, i), Names.bloodBagZombieVillager_name[i]);
 			}
+			LanguageRegistry.addName(new ItemStack(needle, 1), Names.needle_name);
 		
 	}
 }

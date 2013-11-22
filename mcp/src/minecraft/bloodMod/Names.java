@@ -1,8 +1,9 @@
 package bloodMod;
 
 public class Names {
-	//public static final String macuahuitlDiamond_unlocalizedName = "macuahuitlDiamond";
-	public static final String[] bloodBag_unlocalizedName = {"bloodBag0","bloodBag1","bloodBag2","bloodBag3","bloodBag4","bloodBag5","bloodBag6","bloodBag7","bloodBag8","bloodBag9","bloodBagBat10"};
+	public static final String needle_unlocalizedName = "needle";
+	public static final String needle_name = "Needle";
+	public static final String[] bloodBag_unlocalizedName = {"bloodBag0","bloodBag1","bloodBag2","bloodBag3","bloodBag4","bloodBag5","bloodBag6","bloodBag7","bloodBag8","bloodBag9","bloodBag10"};
 	public static final String[] bloodBag_name = {"Empty Blood Bag","Blood Bag Undefined 10mL","Blood Bag Undefined 20mL","Blood Bag Undefined 30mL","Blood Bag Undefined 40mL","Blood Bag Undefined 50mL","Blood Bag Undefined 60mL","Blood Bag Undefined 70mL","Blood Bag Undefined 80mL","Blood Bag Undefined 90mL","Blood Bag Undefined 1L"};
 	public static final String[] bloodBagBat_unlocalizedName = {"bloodBagBat0","bloodBagBat1","bloodBagBat2","bloodBagBat3","bloodBagBat4","bloodBagBat5","bloodBagBat6","bloodBagBat7","bloodBagBat8","bloodBagBat9","bloodBagBat10"};
 	public static final String[] bloodBagBat_name = {"Blood Bag Bat 0","Blood Bag Bat 10mL","Blood Bag Bat 20mL","Blood Bag Bat 30mL","Blood Bag Bat 40mL","Blood Bag Bat 50mL","Blood Bag Bat 60mL","Blood Bag Bat 70mL","Blood Bag Bat 80mL","Blood Bag Bat 90mL","Blood Bag Bat 1L"};
