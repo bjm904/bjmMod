@@ -6,9 +6,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import bjmMod.blocks.Blocks;
+import bjmMod.gui.GuiHandler;
 import bjmMod.items.Items;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -27,6 +29,8 @@ public class bjmMod {
 	public static CreativeTabs CreativeTabBjmMod = new Tab(CreativeTabs.getNextID(), ModInfo.NAME);
 	public static CreativeTabs CreativeTabBjmModTree = new TabTree(CreativeTabs.getNextID(), ModInfo.NAME+" Trees");
 	
+	@Instance(ModInfo.ID)
+	public static bjmMod instance;
 	
 	@EventHandler
 	public static void preInit( FMLPreInitializationEvent event ) {
@@ -38,6 +42,7 @@ public class bjmMod {
 		Recipes.init();
 		Items.addNames();
 		Blocks.addNames();
+		Blocks.registerTileEntities();
 		EnumToolMaterial dMac = EnumHelper.addToolMaterial("Ruby", 3, 64, 100.0F, 3, 15);
 		
     };
@@ -51,6 +56,7 @@ public class bjmMod {
 		MinecraftForge.EVENT_BUS.register(new Aqua_Bonemeal_Event());
 		MinecraftForge.EVENT_BUS.register(new Daystar_Bonemeal_Event());
 		MinecraftForge.EVENT_BUS.register(new Nightend_Bonemeal_Event());
+		new GuiHandler();
 	}
 
 	@EventHandler

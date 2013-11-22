@@ -41,6 +41,7 @@ public static Block nightendLeaves;
 public static Block daystarLeaves;
 public static Block aerobreezeLeaves;
 public static Block aquaLeaves;
+public static Block inverter;
 
 public static void init() {
 
@@ -82,6 +83,8 @@ aerobreezeLeaves = new AerobreezeLeaves(Ids.aerobreezeLeaves);
 GameRegistry.registerBlock(aerobreezeLeaves, AerobreezeLeavesMeta.class);
 aquaLeaves = new AquaLeaves(Ids.aquaLeaves);
 GameRegistry.registerBlock(aquaLeaves, AquaLeavesMeta.class);
+inverter = new Inverter(Ids.inverter);
+GameRegistry.registerBlock(inverter, Names.inverter_unlocalizedName);
 }
 
 public static void addNames() {
@@ -123,5 +126,8 @@ for(int i = 0; i < Names.aerobreezeLeaves_name.length; i++) {
 LanguageRegistry.addName(new ItemStack(aerobreezeLeaves, 1, i), Names.aerobreezeLeaves_name[i]);}
 for(int i = 0; i < Names.aquaLeaves_name.length; i++) {
 LanguageRegistry.addName(new ItemStack(aquaLeaves, 1, i), Names.aquaLeaves_name[i]);}
+}
+public static void registerTileEntities() {
+	GameRegistry.registerTileEntity(InverterTileEntity.class, "bjmModInverter");
 }
 }

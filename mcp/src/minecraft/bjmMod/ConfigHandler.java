@@ -59,7 +59,7 @@ Ids.daystarLeaves = config.getBlock("Daystar Leaves", Ids.daystarLeaves_default)
 Ids.aerobreezeLeaves = config.getBlock("Aerobreeze Leaves", Ids.aerobreezeLeaves_default).getInt();
 Ids.aquaLeaves = config.getBlock("Aqua Leaves", Ids.aquaLeaves_default).getInt();
 
-
+Ids.inverter = config.getBlock(Names.inverter_name, Ids.inverter_default).getInt();
 
 
 

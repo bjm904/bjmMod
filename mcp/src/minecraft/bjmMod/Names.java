@@ -102,4 +102,7 @@ public class Names {
 	public static final String[] aerobreezeLeaves_name = {"Aerobreeze Oak Leaves","Aerobreeze Spruce Leaves","Aerobreeze Birch Leaves","Aerobreeze Jungle Leaves"};
 	public static final String[] aquaLeaves_unlocalizedName = {"aquaLeavesOak","aquaLeavesSpruce","aquaLeavesBirch","aquaLeavesJungle"};
 	public static final String[] aquaLeaves_name = {"Aqua-! Oak Leaves","Aqua-! Spruce Leaves","Aqua-! Birch Leaves","Aqua-! Jungle Leaves"};
+	
+	public static final String inverter_unlocalizedName = "inverter";
+	public static final String inverter_name = "Inverter";
 }

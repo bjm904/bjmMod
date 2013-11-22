@@ -100,5 +100,8 @@ public class Ids {
 	public static int aquaLeaves;
 	public static final int aquaLeaves_default = 3815;
 	
+	public static int inverter;
+	public static final int inverter_default = 3816;
+	
 
 }
