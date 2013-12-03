@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import bjmMod.ModInfo;
 import bjmMod.blocks.TileEntityInverter;
+import bjmMod.container.ContainerInverter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
@@ -37,8 +38,15 @@ public class GuiInverter extends GuiContainer{
 		GL11.glColor4f(1F, 1F, 1F, 1F);//RGBA
 		
 		mc.getTextureManager().bindTexture(texture);
-		
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
+		
+		if(this.inverter.isBurning()){
+			int k = this.inverter.getBurnTimeRemainingScaled(12);
+			drawTexturedModalRect(guiLeft+56, guiTop+36+12-k, 176, 12-k, 14, k+2);//first set is where its drawing, second is where in the texture it starts reading, third is width and height //// DRAWING FIRE
+		}
+		
+		int k = this.inverter.getCookProgressScaled(24);
+		drawTexturedModalRect(guiLeft+79, guiTop+34, 176, 14, k+1, 16);//DRAW PROGRESS ARROW
 	}
 
 	

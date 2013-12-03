@@ -12,6 +12,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityInverter extends TileEntity implements ISidedInventory{
@@ -36,12 +38,7 @@ public class TileEntityInverter extends TileEntity implements ISidedInventory{
 	
 	//time left before cooked
 	public int cookTime;
-	
-	public int getSizeInvnetory(){
-		return this.slots.length;
-	}
-	
-	
+		
 	
 	public String getInvName(){
 		return this.isInvNameLocalized() ? this.localizedName : "container.inverter";
@@ -55,12 +52,6 @@ public class TileEntityInverter extends TileEntity implements ISidedInventory{
 		
 		this.localizedName = displayName;
 	}
-
-
-	public int getSizeInventory() {
-		return 0;
-	}
-
 
 	public ItemStack getStackInSlot(int i) {
 		return this.slots[i];
@@ -113,8 +104,56 @@ public class TileEntityInverter extends TileEntity implements ISidedInventory{
 	public int getInventoryStackLimit() {
 		return 64;
 	}
-
-
+	
+	public void readFromNBT(NBTTagCompound nbt){
+		super.readFromNBT(nbt);
+		
+		NBTTagList list = nbt.getTagList("Items");
+		this.slots = new ItemStack[this.getSizeInventory()];
+		
+		for(int i=0;i<list.tagCount();i++){
+			NBTTagCompound compound = (NBTTagCompound) list.tagAt(i);
+			byte b = compound.getByte("Slot");
+			
+			if(b >= 0 && b < this.slots.length){
+				this.slots[b] = ItemStack.loadItemStackFromNBT(compound);//Write to slots
+			}
+		}
+		
+		this.burnTime = nbt.getShort("BurnTime");
+		this.cookTime = nbt.getShort("CookTime");
+		this.currentItemBurnTime = getItemBurnTime(this.slots[1]);/////////////////////////////////////////NOTE WHEN CHANGING WHERE FUEL IS PLACED
+		
+		if(nbt.hasKey("CustomName")){
+			this.localizedName = nbt.getString("CustomName");
+		}
+	}
+	
+	public void writeToNBT(NBTTagCompound nbt){
+		super.writeToNBT(nbt);
+		
+		nbt.setShort("BurnTime", (short)this.burnTime);
+		nbt.setShort("CookTime", (short)this.cookTime);
+		
+		NBTTagList list = new NBTTagList();
+		
+		for(int i=0;i<this.slots.length;i++){
+			if(this.slots[i] != null){
+				NBTTagCompound compund = new NBTTagCompound();
+				compund.setByte("Slot", (byte)i);
+				this.slots[i].writeToNBT(compund);
+				list.appendTag(compund);
+			}
+		}
+		
+		nbt.setTag("Items", list);
+		
+		if(this.isInvNameLocalized()){//If change name on anvil
+			nbt.setString("CustomName", this.localizedName);
+		}
+		
+	}
+	
 	public boolean isUseableByPlayer(EntityPlayer entityplayer) {
 		return this.worldObj.getBlockTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : entityplayer.getDistanceSq((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D) <= 64.0D;
 	}
@@ -257,6 +296,22 @@ public class TileEntityInverter extends TileEntity implements ISidedInventory{
 
 	public boolean canExtractItem(int i, ItemStack itemstack, int j) {
 		return j != 0 ||  i !=1 || itemstack.itemID == Item.bucketEmpty.itemID; //slot not 0 or 1, or isa a bukkit.. a hopper can extract
+	}
+
+	public int getBurnTimeRemainingScaled(int i) {//For the burning animation
+		if(this.currentItemBurnTime == 0){
+			this.currentItemBurnTime = this.furnaceSpeed;
+		}
+		
+		return this.burnTime * i / this.currentItemBurnTime;
+	}
+	
+	public int getCookProgressScaled(int i){//For progress animation
+		return this.cookTime * i / this.furnaceSpeed;
+	}
+
+	public int getSizeInventory() {
+		return this.slots.length;
 	}
 
 }

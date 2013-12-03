@@ -2,6 +2,7 @@ package bjmMod.gui;
 
 import bjmMod.Ids;
 import bjmMod.blocks.TileEntityInverter;
+import bjmMod.container.ContainerInverter;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
