@@ -5,6 +5,7 @@ import net.minecraft.block.BlockFlower;
 import net.minecraft.item.ItemStack;
 import bjmMod.Ids;
 import bjmMod.Names;
+import bjmMod.bjmMod;
 import bjmMod.blocks.help.AerobreezeLeavesMeta;
 import bjmMod.blocks.help.AerobreezeLogMeta;
 import bjmMod.blocks.help.AerobreezePlankMeta;
@@ -41,7 +42,8 @@ public static Block nightendLeaves;
 public static Block daystarLeaves;
 public static Block aerobreezeLeaves;
 public static Block aquaLeaves;
-public static Block inverter;
+public static Block inverterActive;
+public static Block inverterIdle;
 
 public static void init() {
 
@@ -83,12 +85,14 @@ aerobreezeLeaves = new AerobreezeLeaves(Ids.aerobreezeLeaves);
 GameRegistry.registerBlock(aerobreezeLeaves, AerobreezeLeavesMeta.class);
 aquaLeaves = new AquaLeaves(Ids.aquaLeaves);
 GameRegistry.registerBlock(aquaLeaves, AquaLeavesMeta.class);
-inverter = new Inverter(Ids.inverter);
-GameRegistry.registerBlock(inverter, Names.inverter_unlocalizedName);
+inverterActive = new Inverter(Ids.inverterActive, true).setUnlocalizedName(Names.inverterActive_unlocalizedName).setLightValue(0.8F);
+GameRegistry.registerBlock(inverterActive, Names.inverterActive_unlocalizedName);
+inverterIdle = new Inverter(Ids.inverterIdle, false).setUnlocalizedName(Names.inverterIdle_unlocalizedName).setCreativeTab(bjmMod.CreativeTabBjmMod);;
+GameRegistry.registerBlock(inverterIdle, Names.inverterIdle_unlocalizedName);
 }
 
 public static void addNames() {
-//LanguageRegistry.addName(nightendPlanks, Names.nightendPlanks_name);
+LanguageRegistry.addName(inverterIdle, Names.inverterIdle_name);
 
 
 for(int i = 0; i < Names.nightendSapling_name.length; i++) {
@@ -128,6 +132,6 @@ for(int i = 0; i < Names.aquaLeaves_name.length; i++) {
 LanguageRegistry.addName(new ItemStack(aquaLeaves, 1, i), Names.aquaLeaves_name[i]);}
 }
 public static void registerTileEntities() {
-	GameRegistry.registerTileEntity(InverterTileEntity.class, "bjmModInverter");
+	GameRegistry.registerTileEntity(TileEntityInverter.class, "bjmModInverter");
 }
 }

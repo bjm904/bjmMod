@@ -100,8 +100,12 @@ public class Ids {
 	public static int aquaLeaves;
 	public static final int aquaLeaves_default = 3815;
 	
-	public static int inverter;
-	public static final int inverter_default = 3816;
+	public static int inverterActive;
+	public static final int inverterActive_default = 3816;
+	public static int inverterIdle;
+	public static final int inverterIdle_default = 3817;
 	
-
+	
+	
+	public static final int guiIdInverter = 0;
 }

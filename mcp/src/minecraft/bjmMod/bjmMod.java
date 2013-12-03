@@ -16,6 +16,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod( modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION )
@@ -32,6 +33,8 @@ public class bjmMod {
 	@Instance(ModInfo.ID)
 	public static bjmMod instance;
 	
+	
+	
 	@EventHandler
 	public static void preInit( FMLPreInitializationEvent event ) {
 		ConfigHandler.init(event.getSuggestedConfigurationFile());
@@ -44,6 +47,9 @@ public class bjmMod {
 		Blocks.addNames();
 		Blocks.registerTileEntities();
 		EnumToolMaterial dMac = EnumHelper.addToolMaterial("Ruby", 3, 64, 100.0F, 3, 15);
+		NetworkRegistry.instance().registerGuiHandler(instance, new GuiHandler());
+		
+		LanguageRegistry.instance().addStringLocalization("container.inverter", "Inverter");
 		
     };
 
@@ -56,7 +62,6 @@ public class bjmMod {
 		MinecraftForge.EVENT_BUS.register(new Aqua_Bonemeal_Event());
 		MinecraftForge.EVENT_BUS.register(new Daystar_Bonemeal_Event());
 		MinecraftForge.EVENT_BUS.register(new Nightend_Bonemeal_Event());
-		new GuiHandler();
 	}
 
 	@EventHandler
