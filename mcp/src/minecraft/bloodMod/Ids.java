@@ -66,5 +66,14 @@ public class Ids {
 	public static int needle;
 	public static final int needle_default = 2830;
 	
+	public static int phlebotorActive;
+	public static final int phlebotorActive_default = 2831;
+	public static int phlebotorIdle;
+	public static final int phlebotorIdle_default = 2832;
+	
+	
+	
+	public static final int guiIdPhlebotor = 0;
+	
 
 }

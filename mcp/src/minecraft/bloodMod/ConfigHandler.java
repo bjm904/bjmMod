@@ -2,7 +2,6 @@ package bloodMod;
 
 import java.io.File;
 
-
 import net.minecraftforge.common.Configuration;
 
 public class ConfigHandler {
@@ -43,7 +42,8 @@ Ids.bloodBagZombie = config.getItem("Blood Bag Zombie", Ids.bloodBagZombie_defau
 Ids.bloodBagZombiePigman = config.getItem("Blood Bag ZombiePigman", Ids.bloodBagZombiePigman_default).getInt() - 256;
 Ids.bloodBagZombieVillager = config.getItem("Blood Bag ZombieVillager", Ids.bloodBagZombieVillager_default).getInt() - 256;
 
-
+Ids.phlebotorActive = config.getBlock(Names.phlebotorActive_name, Ids.phlebotorActive_default).getInt();
+Ids.phlebotorIdle = config.getBlock(Names.phlebotorIdle_name, Ids.phlebotorIdle_default).getInt();
 
 config.save();
 }

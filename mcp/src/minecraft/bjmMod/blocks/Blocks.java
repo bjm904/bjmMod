@@ -22,6 +22,7 @@ import bjmMod.blocks.help.NightendLeavesMeta;
 import bjmMod.blocks.help.NightendLogMeta;
 import bjmMod.blocks.help.NightendPlankMeta;
 import bjmMod.blocks.help.NightendSaplingMeta;
+import bjmMod.tileEntity.TileEntityInverter;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 

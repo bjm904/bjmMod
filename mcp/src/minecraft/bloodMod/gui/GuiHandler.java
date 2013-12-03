@@ -1,8 +1,8 @@
-package bjmMod.gui;
+package bloodMod.gui;
 
-import bjmMod.Ids;
-import bjmMod.container.ContainerInverter;
-import bjmMod.tileEntity.TileEntityInverter;
+import bloodMod.Ids;
+import bloodMod.container.ContainerPhlebotor;
+import bloodMod.tileEntity.TileEntityPhlebotor;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -15,9 +15,9 @@ TileEntity entity = world.getBlockTileEntity(x, y, z);
 		
 		if(entity != null){
 			switch(ID){
-				case Ids.guiIdInverter:
-					if(entity instanceof TileEntityInverter){
-						return new ContainerInverter(player.inventory, (TileEntityInverter) entity);
+				case Ids.guiIdPhlebotor:
+					if(entity instanceof TileEntityPhlebotor){
+						return new ContainerPhlebotor(player.inventory, (TileEntityPhlebotor) entity);
 					}
 			}
 		}
@@ -29,9 +29,9 @@ TileEntity entity = world.getBlockTileEntity(x, y, z);
 		
 		if(entity != null){
 			switch(ID){
-				case Ids.guiIdInverter:
-					if(entity instanceof TileEntityInverter){
-						return new GuiInverter(player.inventory, (TileEntityInverter) entity);
+				case Ids.guiIdPhlebotor:
+					if(entity instanceof TileEntityPhlebotor){
+						return new GuiPhlebotor(player.inventory, (TileEntityPhlebotor) entity);
 					}
 			}
 		}

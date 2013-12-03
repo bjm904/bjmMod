@@ -1,5 +1,6 @@
-package bjmMod.blocks;
+package bloodMod.tileEntity;
 
+import bloodMod.blocks.Phlebotor;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -16,7 +17,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityInverter extends TileEntity implements ISidedInventory{
+public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 	private String localizedName;
 	
 	
@@ -41,7 +42,7 @@ public class TileEntityInverter extends TileEntity implements ISidedInventory{
 		
 	
 	public String getInvName(){
-		return this.isInvNameLocalized() ? this.localizedName : "container.inverter";
+		return this.isInvNameLocalized() ? this.localizedName : "container.phlebotor";
 	}
 	
 	public boolean isInvNameLocalized(){
@@ -203,7 +204,7 @@ public class TileEntityInverter extends TileEntity implements ISidedInventory{
 			}
 			if(flag != this.burnTime > 0){//it changed
 				flag1 = true;
-				Inverter.updateInverterBlockState(this.burnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord); //passes true if active
+				Phlebotor.updatePhlebotorBlockState(this.burnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord); //passes true if active
 			}
 			
 		}

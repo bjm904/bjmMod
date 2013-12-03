@@ -1,8 +1,8 @@
-package bjmMod.container;
+package bloodMod.container;
 
+import bloodMod.tileEntity.TileEntityPhlebotor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import bjmMod.tileEntity.TileEntityInverter;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -12,9 +12,9 @@ import net.minecraft.inventory.SlotFurnace;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 
-public class ContainerInverter extends Container {
+public class ContainerPhlebotor extends Container {
 	
-	private TileEntityInverter inverter;
+	private TileEntityPhlebotor phlebotor;
 	
 	public int lastBurnTime;
 	
@@ -22,8 +22,8 @@ public class ContainerInverter extends Container {
 	
 	public int lastCookTime;
 	
-	public ContainerInverter(InventoryPlayer inventory, TileEntityInverter tileentity){
-		this.inverter = tileentity;
+	public ContainerPhlebotor(InventoryPlayer inventory, TileEntityPhlebotor tileentity){
+		this.phlebotor = tileentity;
 		
 		this.addSlotToContainer(new Slot(tileentity, 0, 56, 17));
 		this.addSlotToContainer(new Slot(tileentity, 1, 56, 53));
@@ -42,9 +42,9 @@ public class ContainerInverter extends Container {
 	
 	public void addCraftingToCrafters(ICrafting icrafting){
 		super.addCraftingToCrafters(icrafting);//in container
-		icrafting.sendProgressBarUpdate(this, 0, this.inverter.cookTime);
-		icrafting.sendProgressBarUpdate(this, 1, this.inverter.burnTime);
-		icrafting.sendProgressBarUpdate(this, 2, this.inverter.currentItemBurnTime);
+		icrafting.sendProgressBarUpdate(this, 0, this.phlebotor.cookTime);
+		icrafting.sendProgressBarUpdate(this, 1, this.phlebotor.burnTime);
+		icrafting.sendProgressBarUpdate(this, 2, this.phlebotor.currentItemBurnTime);
 	}
 	
 	public void detectAndSendChanges(){
@@ -53,27 +53,27 @@ public class ContainerInverter extends Container {
 		for(int i=0;i<this.crafters.size();i++){
 			ICrafting icrafting = (ICrafting)this.crafters.get(i);
 			
-			if(this.lastCookTime != this.inverter.cookTime){
-				icrafting.sendProgressBarUpdate(this, 0, this.inverter.cookTime);
+			if(this.lastCookTime != this.phlebotor.cookTime){
+				icrafting.sendProgressBarUpdate(this, 0, this.phlebotor.cookTime);
 			}
-			if(this.lastBurnTime != this.inverter.burnTime){
-				icrafting.sendProgressBarUpdate(this, 1, this.inverter.burnTime);
+			if(this.lastBurnTime != this.phlebotor.burnTime){
+				icrafting.sendProgressBarUpdate(this, 1, this.phlebotor.burnTime);
 			}
-			if(this.lastItemBurnTime != this.inverter.currentItemBurnTime){
-				icrafting.sendProgressBarUpdate(this, 2, this.inverter.currentItemBurnTime);
+			if(this.lastItemBurnTime != this.phlebotor.currentItemBurnTime){
+				icrafting.sendProgressBarUpdate(this, 2, this.phlebotor.currentItemBurnTime);
 			}
 		}
 		
-		this.lastCookTime = this.inverter.cookTime;
-		this.lastBurnTime = this.inverter.burnTime;
-		this.lastItemBurnTime = this.inverter.currentItemBurnTime;
+		this.lastCookTime = this.phlebotor.cookTime;
+		this.lastBurnTime = this.phlebotor.burnTime;
+		this.lastItemBurnTime = this.phlebotor.currentItemBurnTime;
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void updateProgressBar(int slot, int newValue){
-		if(slot == 0) this.inverter.cookTime = newValue;
-		if(slot == 1) this.inverter.burnTime = newValue;
-		if(slot == 2) this.inverter.currentItemBurnTime = newValue;
+		if(slot == 0) this.phlebotor.cookTime = newValue;
+		if(slot == 1) this.phlebotor.burnTime = newValue;
+		if(slot == 2) this.phlebotor.currentItemBurnTime = newValue;
 	}
 	
 	public ItemStack transferStackInSlot(EntityPlayer player, int clickedSlotNumber){//Shift click
@@ -95,7 +95,7 @@ public class ContainerInverter extends Container {
 					if(!this.mergeItemStack(itemstack1, 0, 1, false)){
 						return null;
 					}
-				}else if(TileEntityInverter.isItemFuel(itemstack1)){
+				}else if(TileEntityPhlebotor.isItemFuel(itemstack1)){
 					if(!this.mergeItemStack(itemstack1, 1, 2, false)){
 						return null;
 					}
@@ -130,7 +130,7 @@ public class ContainerInverter extends Container {
 	}
 
 	public boolean canInteractWith(EntityPlayer entityplayer) {
-		return this.inverter.isUseableByPlayer(entityplayer);
+		return this.phlebotor.isUseableByPlayer(entityplayer);
 	}
 
 }

@@ -1,14 +1,14 @@
-package bjmMod.blocks;
+package bloodMod.blocks;
 
 import java.util.Random;
 
+import bloodMod.Ids;
+import bloodMod.ModInfo;
+import bloodMod.bloodMod;
+import bloodMod.tileEntity.TileEntityPhlebotor;
 import cpw.mods.fml.common.network.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import bjmMod.Ids;
-import bjmMod.ModInfo;
-import bjmMod.bjmMod;
-import bjmMod.tileEntity.TileEntityInverter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -25,7 +25,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class Inverter extends BlockContainer {
+public class Phlebotor extends BlockContainer {
 	
 	private Random rand = new Random();
 	
@@ -36,7 +36,7 @@ public class Inverter extends BlockContainer {
 	
 	public static boolean keepInventory;
 	
-	public Inverter(int id, boolean isActive) {
+	public Phlebotor(int id, boolean isActive) {
 		super(id, Material.rock);
 		setHardness(3.5F);
 		
@@ -45,8 +45,8 @@ public class Inverter extends BlockContainer {
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister){
-		this.blockIcon = iconRegister.registerIcon(ModInfo.texture +":inverter_side");
-		this.iconFront = iconRegister.registerIcon(ModInfo.texture +":"+ (this.isActive ? "inverter_front_active" : "inverter_front_idle"));
+		this.blockIcon = iconRegister.registerIcon(ModInfo.texture +":phlebotor_side");
+		this.iconFront = iconRegister.registerIcon(ModInfo.texture +":"+ (this.isActive ? "phlebotor_front_active" : "phlebotor_front_idle"));
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -55,7 +55,7 @@ public class Inverter extends BlockContainer {
 	}
 	
 	public int idDropped(int par1, Random random, int par3){
-		return Blocks.inverterIdle.blockID;
+		return Blocks.phlebotorIdle.blockID;
 	}
 	
 	public void onBlockAdded(World world, int x, int y, int z){
@@ -90,14 +90,14 @@ public class Inverter extends BlockContainer {
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ){
 		if(!world.isRemote){
-			FMLNetworkHandler.openGui(player, bjmMod.instance, Ids.guiIdInverter, world, x, y, z);
+			FMLNetworkHandler.openGui(player, bloodMod.instance, Ids.guiIdPhlebotor, world, x, y, z);
 		}
 		
 		return true;
 	}
 	
 	public TileEntity createNewTileEntity(World world){
-		return new TileEntityInverter();
+		return new TileEntityPhlebotor();
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -145,20 +145,20 @@ public class Inverter extends BlockContainer {
 		}
 		
 		if(itemstack.hasDisplayName()){
-			((TileEntityInverter) world.getBlockTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());
+			((TileEntityPhlebotor) world.getBlockTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());
 		}
 	}
 
-	public static void updateInverterBlockState(boolean active, World worldObj, int xCoord, int yCoord, int zCoord) {
+	public static void updatePhlebotorBlockState(boolean active, World worldObj, int xCoord, int yCoord, int zCoord) {
 		int i = worldObj.getBlockMetadata(xCoord, yCoord, zCoord);//get metadata
 		
 		TileEntity tileentity = worldObj.getBlockTileEntity(xCoord, yCoord, zCoord);
 		keepInventory = true;
 		
 		if(active){
-			worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.inverterActive.blockID);
+			worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.phlebotorActive.blockID);
 		}else{
-			worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.inverterIdle.blockID);
+			worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.phlebotorIdle.blockID);
 		}
 		
 		keepInventory = false;
@@ -173,7 +173,7 @@ public class Inverter extends BlockContainer {
 	
 	public void breakBlock(World world, int x, int y, int z, int oldBlockID, int oldMetadata){
 		if(!keepInventory){
-			TileEntityInverter tileentity = (TileEntityInverter) world.getBlockTileEntity(x, y, z);
+			TileEntityPhlebotor tileentity = (TileEntityPhlebotor) world.getBlockTileEntity(x, y, z);
 			
 			if(tileentity != null){
 				for(int i=0;i<tileentity.getSizeInventory();i++){
@@ -225,7 +225,7 @@ public class Inverter extends BlockContainer {
 	}
 	
 	public int idPicked(World world, int x, int y, int z){
-		return Blocks.inverterIdle.blockID;
+		return Blocks.phlebotorIdle.blockID;
 	}
 	
 }
