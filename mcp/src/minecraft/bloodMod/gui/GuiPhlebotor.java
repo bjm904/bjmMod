@@ -24,7 +24,7 @@ public class GuiPhlebotor extends GuiContainer{
 		this.phlebotor = entity;
 		
 		this.xSize = 176;
-		this.ySize = 166;
+		this.ySize = 236;//166 default
 	}
 	
 	public void drawGuiContainerForegroundLayer(int par1, int par2){

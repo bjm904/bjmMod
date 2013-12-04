@@ -40,6 +40,9 @@ public class Items {
 	public static Item bloodBagZombiePigman;
 	public static Item bloodBagZombieVillager;
 	
+	public static Item particle;
+	public static Item particle1;
+	
 	public static Item needle;
 	
 	public static void init() {
@@ -75,6 +78,9 @@ public class Items {
 		bloodBagZombie = new BloodBagZombie(Ids.bloodBagZombie);
 		bloodBagZombiePigman = new BloodBagZombiePigman(Ids.bloodBagZombiePigman);
 		bloodBagZombieVillager = new BloodBagZombieVillager(Ids.bloodBagZombieVillager);
+		
+		particle = new Particle(Ids.particle);
+		particle1 = new Particle1(Ids.particle1);
 		
 		needle = new Needle(Ids.needle);
 		
@@ -174,6 +180,14 @@ public class Items {
 		for(int i = 0; i < Names.bloodBagZombieVillager_name.length; i++) {
 			LanguageRegistry.addName(new ItemStack(bloodBagZombieVillager, 1, i), Names.bloodBagZombieVillager_name[i]);
 			}
+		
+		for(int i = 0; i < Names.particle_name.length; i++) {
+			LanguageRegistry.addName(new ItemStack(particle, 1, i), Names.particle_name[i]);
+			}
+		for(int i = 0; i < Names.particle1_name.length; i++) {
+			LanguageRegistry.addName(new ItemStack(particle1, 1, i), Names.particle1_name[i]);
+			}
+		
 			LanguageRegistry.addName(new ItemStack(needle, 1), Names.needle_name);
 		
 	}

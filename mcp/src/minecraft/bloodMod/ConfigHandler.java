@@ -42,6 +42,9 @@ Ids.bloodBagZombie = config.getItem("Blood Bag Zombie", Ids.bloodBagZombie_defau
 Ids.bloodBagZombiePigman = config.getItem("Blood Bag ZombiePigman", Ids.bloodBagZombiePigman_default).getInt() - 256;
 Ids.bloodBagZombieVillager = config.getItem("Blood Bag ZombieVillager", Ids.bloodBagZombieVillager_default).getInt() - 256;
 
+Ids.particle = config.getItem("Particle Set 0", Ids.particle_default).getInt() - 256;
+Ids.particle1 = config.getItem("Particle Set 1", Ids.particle1_default).getInt() - 256;
+
 Ids.phlebotorActive = config.getBlock(Names.phlebotorActive_name, Ids.phlebotorActive_default).getInt();
 Ids.phlebotorIdle = config.getBlock(Names.phlebotorIdle_name, Ids.phlebotorIdle_default).getInt();
 

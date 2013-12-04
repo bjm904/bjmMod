@@ -1,6 +1,7 @@
 package bloodMod.tileEntity;
 
 import bloodMod.blocks.Phlebotor;
+import bloodMod.items.Items;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -26,7 +27,7 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 	public static final int[] slots_bottom = new int[]{2, 1}; //2 is higher priority
 	public static final int[] slots_sides = new int[]{1}; //slot one can be acceed from side with hopper
 	
-	private ItemStack[] slots = new ItemStack[3];
+	private ItemStack[] slots = new ItemStack[39];
 	
 	
 	public int furnaceSpeed = 200;
@@ -125,8 +126,8 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 		this.cookTime = nbt.getShort("CookTime");
 		this.currentItemBurnTime = getItemBurnTime(this.slots[1]);/////////////////////////////////////////NOTE WHEN CHANGING WHERE FUEL IS PLACED
 		
-		if(nbt.hasKey("CustomName")){
-			this.localizedName = nbt.getString("CustomName");
+		if(nbt.hasKey("PhlebotorKey")){
+			this.localizedName = nbt.getString("PhlebotorKey");
 		}
 	}
 	
@@ -150,7 +151,7 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 		nbt.setTag("Items", list);
 		
 		if(this.isInvNameLocalized()){//If change name on anvil
-			nbt.setString("CustomName", this.localizedName);
+			nbt.setString("PhlebotorKey", this.localizedName);
 		}
 		
 	}
@@ -168,6 +169,29 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 	}
 	
 	public void updateEntity(){
+		
+		for(int i=0;i<16;i++){
+			if(slots[i+2] == null){
+				slots[i+2] = new ItemStack(Items.particle, 0, i);
+			}
+		}
+		for(int i=16;i<18;i++){
+			if(slots[i+2] == null){
+				slots[i+2] = new ItemStack(Items.particle1, 0, i-16);
+			}
+		}
+		for(int i=18;i<34;i++){
+			if(slots[i+2] == null){
+				slots[i+2] = new ItemStack(Items.particle, 0, i-18);
+			}
+		}
+		for(int i=34;i<36;i++){
+			if(slots[i+2] == null){
+				slots[i+2] = new ItemStack(Items.particle1, 0, i-34);
+			}
+		}
+		
+		
 		boolean flag = this.burnTime > 0;//flags for use later with changed state
 		boolean flag1 = false;//update inventory later
 		

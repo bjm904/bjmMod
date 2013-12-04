@@ -42,6 +42,7 @@ public class bloodMod {
 		Recipes.init();
 		Items.addNames();
 		Blocks.addNames();
+		Blocks.registerTileEntities();
 		EnumToolMaterial dMac = EnumHelper.addToolMaterial("Ruby", 3, 64, 100.0F, 3, 15);
 		NetworkRegistry.instance().registerGuiHandler(instance, new GuiHandler());
 		

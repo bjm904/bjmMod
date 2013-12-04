@@ -66,6 +66,10 @@ public class Names {
 	public static final String[] bloodBagZombieVillager_unlocalizedName = {"bloodBagZombieVillager0","bloodBagZombieVillager1","bloodBagZombieVillager2","bloodBagZombieVillager3","bloodBagZombieVillager4","bloodBagZombieVillager5","bloodBagZombieVillager6","bloodBagZombieVillager7","bloodBagZombieVillager8","bloodBagZombieVillager9","bloodBagZombieVillager10"};
 	public static final String[] bloodBagZombieVillager_name = {"Blood Bag ZombieVillager 0","Blood Bag ZombieVillager 10mL","Blood Bag ZombieVillager 20mL","Blood Bag ZombieVillager 30mL","Blood Bag ZombieVillager 40mL","Blood Bag ZombieVillager 50mL","Blood Bag ZombieVillager 60mL","Blood Bag ZombieVillager 70mL","Blood Bag ZombieVillager 80mL","Blood Bag ZombieVillager 90mL","Blood Bag ZombieVillager 1L"};
 
+	public static final String[] particle_unlocalizedName = {"particle0","particle1","particle2","particle3","particle4","particle5","particle6","particle7","particle8","particle9","particle10","particle11","particle12","particle13","particle14","particle15"};
+	public static final String[] particle_name = {"particle0","particle1","particle2","particle3","particle4","particle5","particle6","particle7","particle8","particle9","particle10","particle11","particle12","particle13","particle14","particle15"};
+	public static final String[] particle1_unlocalizedName = {"particle16","particle17","particle18","particle19","particle20","particle21","particle22","particle23","particle24","particle25","particle26","particle27","particle28","particle29","particle30","particle31"};
+	public static final String[] particle1_name = {"particle16","particle17","particle18","particle19","particle20","particle21","particle22","particle23","particle24","particle25","particle26","particle27","particle28","particle29","particle30","particle31"};
 	
 	public static final String phlebotorActive_unlocalizedName = "phlebotorActive";
 	public static final String phlebotorActive_name = "Phlebotor Active";
