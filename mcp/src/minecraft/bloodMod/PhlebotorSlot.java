@@ -23,7 +23,7 @@ public class PhlebotorSlot extends Slot
      */
     public boolean isItemValid(ItemStack par1ItemStack)
     {
-        return true;
+        return false;
     }
 
     /**

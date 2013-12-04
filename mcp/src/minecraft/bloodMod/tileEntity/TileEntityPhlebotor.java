@@ -92,6 +92,12 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 		
 		return null;
 	}
+	
+	public  void click(ItemStack itemstack, int slotnum){
+		
+		
+		
+	}
 
 
 	public void setInventorySlotContents(int i, ItemStack itemstack) {
@@ -172,22 +178,24 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 		
 		for(int i=0;i<16;i++){
 			if(slots[i+2] == null){
-				slots[i+2] = new ItemStack(Items.particle, 0, i);
+				slots[i+2] = new ItemStack(Items.particle, 3, i);
+				this.onInventoryChanged();
 			}
 		}
 		for(int i=16;i<18;i++){
 			if(slots[i+2] == null){
-				slots[i+2] = new ItemStack(Items.particle1, 0, i-16);
+				slots[i+2] = new ItemStack(Items.particle1, 3, i-16);
+				this.onInventoryChanged();
 			}
 		}
 		for(int i=18;i<34;i++){
 			if(slots[i+2] == null){
-				slots[i+2] = new ItemStack(Items.particle, 0, i-18);
+				//slots[i+2] = new ItemStack(Items.particle, 1, i-18);
 			}
 		}
 		for(int i=34;i<36;i++){
 			if(slots[i+2] == null){
-				slots[i+2] = new ItemStack(Items.particle1, 0, i-34);
+				//slots[i+2] = new ItemStack(Items.particle1, 1, i-34);
 			}
 		}
 		

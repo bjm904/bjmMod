@@ -1,6 +1,8 @@
 package bloodMod.container;
 
+import bloodMod.Ids;
 import bloodMod.PhlebotorSlot;
+import bloodMod.items.Items;
 import bloodMod.tileEntity.TileEntityPhlebotor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -26,8 +28,8 @@ public class ContainerPhlebotor extends Container {
 	public ContainerPhlebotor(InventoryPlayer inventory, TileEntityPhlebotor tileentity){
 		this.phlebotor = tileentity;
 		
-		this.addSlotToContainer(new PhlebotorSlot(tileentity, 0, 5, 17));
-		this.addSlotToContainer(new PhlebotorSlot(tileentity, 1, 105, 17));
+		this.addSlotToContainer(new Slot(tileentity, 0, 5, 17));
+		this.addSlotToContainer(new Slot(tileentity, 1, 105, 17));
 		
 		for(int i=0;i<2;i++){
 			for(int j=0;j<9;j++){
@@ -85,6 +87,57 @@ public class ContainerPhlebotor extends Container {
 		if(slot == 1) this.phlebotor.burnTime = newValue;
 		if(slot == 2) this.phlebotor.currentItemBurnTime = newValue;
 	}
+	
+	public void checkStacksForNull(){
+		for(int i=0;i<this.inventorySlots.size();i++){
+			Slot slot = (Slot)this.inventorySlots.get(i);
+			if(slot.getHasStack()){
+				ItemStack itemstack = slot.getStack();
+			
+				if(itemstack.stackSize <= 0){
+					slot.putStack((ItemStack)null);
+				}
+			}
+		}
+	}
+	
+	@Override
+	public ItemStack slotClick(int slotnum, int par2, int par3, EntityPlayer player){
+		checkStacksForNull();
+		ItemStack itemstack = super.slotClick(slotnum, par2, par3, player);
+		Slot slot = (Slot)this.inventorySlots.get(slotnum);
+		if(slot.getHasStack() == true && player.inventory.getItemStack() == null){
+			ItemStack itemstack1 = slot.getStack();
+			if(slotnum >= 2 && slotnum <= 20){
+				
+				Slot slot2 = (Slot)this.inventorySlots.get(slotnum+18);
+				ItemStack itemstack2 = slot2.getStack();
+				if(itemstack2 != null && itemstack1 != null){
+					itemstack1.stackSize--;
+					itemstack2.stackSize++;
+				}else if (itemstack2 == null){
+					itemstack1.stackSize--;
+					slot2.putStack(new ItemStack(itemstack1.itemID, 1, itemstack1.getItemDamage()));
+				}
+				checkStacksForNull();
+				return null;
+			}else if(slotnum >= 21 && slotnum <= 39){
+				Slot slot2 = (Slot)this.inventorySlots.get(slotnum-18);
+				ItemStack itemstack2 = slot2.getStack();
+				if(itemstack2 != null && itemstack1 != null){
+					itemstack1.stackSize--;
+					itemstack2.stackSize++;
+					
+				}
+				checkStacksForNull();
+				return null;
+			}
+		}
+
+		return itemstack;
+		
+	 }
+	
 	
 	public ItemStack transferStackInSlot(EntityPlayer player, int clickedSlotNumber){//Shift click
 		ItemStack itemstack = null;
