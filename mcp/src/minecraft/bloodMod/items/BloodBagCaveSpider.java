@@ -19,6 +19,7 @@ public BloodBagCaveSpider(int id) {
 super(id);
 setCreativeTab(bloodMod.tabBlood);
 setHasSubtypes(true);
+maxStackSize = 1;
 }
 
 @Override
