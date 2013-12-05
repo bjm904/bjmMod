@@ -66,11 +66,12 @@ public class Needle extends Item{
 
         return -1;
 	}
-	public void onDraw(EntityLivingBase target){
+	public void onDraw(ItemStack itemstack, EntityPlayer player, EntityLivingBase target){
 		target.worldObj.spawnParticle("reddust", target.posX,  target.posY+target.getEyeHeight()+0.2,  target.posZ, 0D, 0D, 0D);
 		target.worldObj.spawnParticle("reddust", target.posX,  target.posY+target.getEyeHeight()+0.5,  target.posZ, 0D, 0D, 0D);
 		target.performHurtAnimation();
 		target.setHealth(target.getHealth()-1);
+		itemstack.damageItem(1, player);
 	}
 	public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase target) {
 		if(target.worldObj.isRemote) {
@@ -85,7 +86,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								
 								return true;
 								
@@ -99,7 +100,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -114,7 +115,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -126,7 +127,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -141,7 +142,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -153,7 +154,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -168,7 +169,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								
 								return true;
 							}
@@ -181,7 +182,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -196,7 +197,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -208,7 +209,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -223,7 +224,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -235,7 +236,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -250,7 +251,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -262,7 +263,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -277,7 +278,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -289,7 +290,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -304,7 +305,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -316,7 +317,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -331,7 +332,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -343,7 +344,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -358,7 +359,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -370,7 +371,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -385,7 +386,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -397,7 +398,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -412,7 +413,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -424,7 +425,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -439,7 +440,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -451,7 +452,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -466,7 +467,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -478,7 +479,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -493,7 +494,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -505,7 +506,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -520,7 +521,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -532,7 +533,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -547,7 +548,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -559,7 +560,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -574,7 +575,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -586,7 +587,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -601,7 +602,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -613,7 +614,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -628,7 +629,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -640,7 +641,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -655,7 +656,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -667,7 +668,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -682,7 +683,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -694,7 +695,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -709,7 +710,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -721,7 +722,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -736,7 +737,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -748,7 +749,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -763,7 +764,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -775,7 +776,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -790,7 +791,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -802,7 +803,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -817,7 +818,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -829,7 +830,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -844,7 +845,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -856,7 +857,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
@@ -871,7 +872,7 @@ public class Needle extends Item{
 							int damage = itemstack1.getItemDamage();
 							if(damage < 10){
 								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(target);
+								onDraw(itemstack, player, target);
 								return true;
 							}
 						}
@@ -883,7 +884,7 @@ public class Needle extends Item{
 						int damage = itemstack1.getItemDamage();
 						if(damage < 10){
 							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(target);
+							onDraw(itemstack, player, target);
 							return true;
 						}
 					}
