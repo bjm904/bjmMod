@@ -48,7 +48,7 @@ public class Needle extends Item{
 		super(par1);
 		setCreativeTab(bloodMod.tabBlood);
 		setUnlocalizedName(Names.needle_unlocalizedName);
-		setMaxDamage(10);
+		setMaxDamage(30);
 	}
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {

@@ -63,6 +63,7 @@ public class Phlebotor extends BlockContainer {
 		this.setDefaultDirection(world, x, y, z);
 	}
 	private void setDefaultDirection(World world, int x, int y, int z){
+		
 		if(!world.isRemote){
 			int l = world.getBlockId(x, y, z - 1);
 			int il = world.getBlockId(x, y, z + 1);
