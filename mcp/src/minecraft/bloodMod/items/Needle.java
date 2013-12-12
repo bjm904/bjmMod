@@ -70,7 +70,9 @@ public class Needle extends Item{
 		target.worldObj.spawnParticle("reddust", target.posX,  target.posY+target.getEyeHeight()+0.2,  target.posZ, 0D, 0D, 0D);
 		target.worldObj.spawnParticle("reddust", target.posX,  target.posY+target.getEyeHeight()+0.5,  target.posZ, 0D, 0D, 0D);
 		target.performHurtAnimation();
+		target.hurtTime = 20;
 		target.setHealth(target.getHealth()-1);
+		target.attackEntityAsMob(target);
 		itemstack.damageItem(1, player);
 	}
 	public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase target) {

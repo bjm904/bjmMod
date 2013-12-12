@@ -13,8 +13,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import bloodMod.BloodBagHelper;
 
 
 public class BloodBagChicken extends Item {
@@ -24,19 +26,10 @@ setCreativeTab(bloodMod.tabBlood);
 setHasSubtypes(true);
 maxStackSize = 1;
 }
-
-
-
-
-public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
+public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
 {
-	Analyze.AnalyzeBlood(itemstack, true, player);
-    return true;
+list = BloodBagHelper.getList(stack,list);
 }
-
-
-
-
 @Override
 public String getUnlocalizedName(ItemStack itemstack) {
 return Names.bloodBagChicken_unlocalizedName[itemstack.getItemDamage()];

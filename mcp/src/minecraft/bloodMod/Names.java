@@ -67,9 +67,9 @@ public class Names {
 	public static final String[] bloodBagZombieVillager_name = {"Blood Bag ZombieVillager 0","Blood Bag ZombieVillager 10mL","Blood Bag ZombieVillager 20mL","Blood Bag ZombieVillager 30mL","Blood Bag ZombieVillager 40mL","Blood Bag ZombieVillager 50mL","Blood Bag ZombieVillager 60mL","Blood Bag ZombieVillager 70mL","Blood Bag ZombieVillager 80mL","Blood Bag ZombieVillager 90mL","Blood Bag ZombieVillager 1L"};
 
 	public static final String[] particle_unlocalizedName = {"particle0","particle1","particle2","particle3","particle4","particle5","particle6","particle7","particle8","particle9","particle10","particle11","particle12","particle13","particle14","particle15"};
-	public static final String[] particle_name = {"particle0","particle1","particle2","particle3","particle4","particle5","particle6","particle7","particle8","particle9","particle10","particle11","particle12","particle13","particle14","particle15"};
+	public static final String[] particle_name = {"§3Aqua Particle","§5Archier Particle","§0Darkness Particle","§eDay Particle","§4Death Particle","§bDiamond Particle","§dEcho Particle","§7End Particle","§cFear Particle","§fFeather Particle","§6Flame Particle","§7Gunpowder Particle","§fIron Particle","§eLight Particle","§aRace Particle","§2Spring Particle"};
 	public static final String[] particle1_unlocalizedName = {"particle16","particle17","particle18","particle19","particle20","particle21","particle22","particle23","particle24","particle25","particle26","particle27","particle28","particle29","particle30","particle31"};
-	public static final String[] particle1_name = {"particle16","particle17","particle18","particle19","particle20","particle21","particle22","particle23","particle24","particle25","particle26","particle27","particle28","particle29","particle30","particle31"};
+	public static final String[] particle1_name = {"§fSugar Particle","§9Sustenance Particle","particle18","particle19","particle20","particle21","particle22","particle23","particle24","particle25","particle26","particle27","particle28","particle29","particle30","particle31"};
 	
 	public static final String phlebotorActive_unlocalizedName = "phlebotorActive";
 	public static final String phlebotorActive_name = "Phlebotor Active";

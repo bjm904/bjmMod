@@ -1,5 +1,6 @@
 package bloodMod.container;
 
+import bloodMod.Analyze;
 import bloodMod.Ids;
 import bloodMod.PhlebotorSlot;
 import bloodMod.items.Items;
@@ -36,6 +37,7 @@ public class ContainerPhlebotor extends Container {
 				this.addSlotToContainer(new PhlebotorSlot(tileentity, j+i*9+2, 8+j*18, 48+i*18));
 			}
 		}
+		
 		for(int i=0;i<2;i++){
 			for(int j=0;j<9;j++){
 				this.addSlotToContainer(new PhlebotorSlot(tileentity, j+i*9+20, 8+j*18, 95+i*18));
@@ -74,6 +76,16 @@ public class ContainerPhlebotor extends Container {
 			if(this.lastItemBurnTime != this.phlebotor.currentItemBurnTime){
 				icrafting.sendProgressBarUpdate(this, 2, this.phlebotor.currentItemBurnTime);
 			}
+			
+			Slot slot = (Slot)this.inventorySlots.get(0);
+			if(slot.getHasStack()){
+				ItemStack itemstack = slot.getStack();
+				
+				if(itemstack.stackTagCompound == null || itemstack.stackTagCompound.getBoolean("analyzed")==false){
+					Analyze.AnalyzeBlood(itemstack, true);
+				}
+			}
+			
 		}
 		
 		this.lastCookTime = this.phlebotor.cookTime;
@@ -105,7 +117,12 @@ public class ContainerPhlebotor extends Container {
 	public ItemStack slotClick(int slotnum, int par2, int par3, EntityPlayer player){
 		checkStacksForNull();
 		ItemStack itemstack = super.slotClick(slotnum, par2, par3, player);
-		Slot slot = (Slot)this.inventorySlots.get(slotnum);
+		Slot slot;
+		if(slotnum>=0){//Need this to work
+		slot = (Slot)this.inventorySlots.get(slotnum);
+		} else {
+			return itemstack;
+		}
 		if(slot.getHasStack() == true && player.inventory.getItemStack() == null){
 			ItemStack itemstack1 = slot.getStack();
 			if(slotnum >= 2 && slotnum <= 20){
