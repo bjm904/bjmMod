@@ -77,14 +77,7 @@ public class ContainerPhlebotor extends Container {
 				icrafting.sendProgressBarUpdate(this, 2, this.phlebotor.currentItemBurnTime);
 			}
 			
-			Slot slot = (Slot)this.inventorySlots.get(0);
-			if(slot.getHasStack()){
-				ItemStack itemstack = slot.getStack();
-				
-				if(itemstack.stackTagCompound == null || itemstack.stackTagCompound.getBoolean("analyzed")==false){
-					Analyze.AnalyzeBlood(itemstack, true);
-				}
-			}
+
 			
 		}
 		
@@ -125,26 +118,33 @@ public class ContainerPhlebotor extends Container {
 		}
 		if(slot.getHasStack() == true && player.inventory.getItemStack() == null){
 			ItemStack itemstack1 = slot.getStack();
-			if(slotnum >= 2 && slotnum <= 20){
-				
+			Slot slot0 = (Slot)this.inventorySlots.get(0);
+			ItemStack itemstack0 = slot0.getStack();
+			String[] names= {"aqua","archier","darkness","day","death","diamond","echo","end","fear","feather","flame","gunpowder","iron","light","race","spring","sugar","sustenance"};
+
+			
+			if(slotnum >= 2 && slotnum <= 19){
+				int namenum=slotnum-2;
 				Slot slot2 = (Slot)this.inventorySlots.get(slotnum+18);
 				ItemStack itemstack2 = slot2.getStack();
 				if(itemstack2 != null && itemstack1 != null){
-					itemstack1.stackSize--;
+					if(itemstack0.getTagCompound().getInteger(names[namenum])>0){
+						itemstack0.getTagCompound().setInteger(names[namenum], itemstack0.getTagCompound().getInteger(names[namenum])-1);
+					}
 					itemstack2.stackSize++;
-				}else if (itemstack2 == null){
-					itemstack1.stackSize--;
+				}else if(itemstack2 == null){
+					if(itemstack0.getTagCompound().getInteger(names[namenum])>0){
+						itemstack0.getTagCompound().setInteger(names[namenum], itemstack0.getTagCompound().getInteger(names[namenum])-1);
+					}
 					slot2.putStack(new ItemStack(itemstack1.itemID, 1, itemstack1.getItemDamage()));
 				}
 				checkStacksForNull();
 				return null;
-			}else if(slotnum >= 21 && slotnum <= 39){
-				Slot slot2 = (Slot)this.inventorySlots.get(slotnum-18);
-				ItemStack itemstack2 = slot2.getStack();
-				if(itemstack2 != null && itemstack1 != null){
+			}else if(slotnum >= 20 && slotnum <= 38){
+				int namenum=slotnum-20;
+				if(itemstack1 != null){
 					itemstack1.stackSize--;
-					itemstack2.stackSize++;
-					
+					itemstack0.getTagCompound().setInteger(names[namenum], itemstack0.getTagCompound().getInteger(names[namenum])+1);
 				}
 				checkStacksForNull();
 				return null;

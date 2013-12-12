@@ -1,5 +1,6 @@
 package bloodMod.tileEntity;
 
+import bloodMod.Analyze;
 import bloodMod.blocks.Phlebotor;
 import bloodMod.items.Items;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -7,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemHoe;
@@ -32,7 +34,7 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 	
 	public int furnaceSpeed = 200;
 	
-	//how long this furnace will continue to vburn for
+	//how long this furnace will continue to burn for
 	public int burnTime;
 	
 	//start time for this fuel
@@ -176,16 +178,60 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 	
 	public void updateEntity(){
 		
-		for(int i=0;i<16;i++){
-			if(slots[i+2] == null){
-				slots[i+2] = new ItemStack(Items.particle, 3, i);
-				this.onInventoryChanged();
+		if(slots[0]!=null){		
+			if(slots[0].stackTagCompound == null || slots[0].stackTagCompound.getBoolean("analyzed")==false){
+				Analyze.AnalyzeBlood(slots[0], true);
 			}
 		}
-		for(int i=16;i<18;i++){
-			if(slots[i+2] == null){
-				slots[i+2] = new ItemStack(Items.particle1, 3, i-16);
+		
+		if(slots[0] != null){
+			if(slots[0].stackTagCompound != null && slots[0].stackTagCompound.getBoolean("analyzed")==true){
+				if(slots[0].stackTagCompound.getInteger("aqua")>0) slots[2] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("aqua"), 0);
+				else slots[2] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("archier")>0) slots[3] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("archier"), 1);
+				else slots[3] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("darkness")>0) slots[4] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("darkness"), 2);
+				else slots[4] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("day")>0) slots[5] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("day"), 3);
+				else slots[5] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("death")>0) slots[6] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("death"), 4);
+				else slots[6] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("diamond")>0) slots[7] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("diamond"), 5);
+				else slots[7] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("echo")>0) slots[8] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("echo"), 6);
+				else slots[8] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("end")>0) slots[9] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("end"), 7);
+				else slots[9] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("fear")>0) slots[10] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("fear"), 8);
+				else slots[10] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("feather")>0) slots[11] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("feather"), 9);
+				else slots[11] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("flame")>0) slots[12] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("flame"), 10);
+				else slots[12] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("gunpowder")>0) slots[13] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("gunpowder"), 11);
+				else slots[13] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("iron")>0) slots[14] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("iron"), 12);
+				else slots[14] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("light")>0) slots[15] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("light"), 13);
+				else slots[15] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("race")>0) slots[16] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("race"), 14);
+				else slots[16] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("spring")>0) slots[17] = new ItemStack(Items.particle, slots[0].stackTagCompound.getInteger("spring"), 15);
+				else slots[17] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("sugar")>0) slots[18] = new ItemStack(Items.particle1, slots[0].stackTagCompound.getInteger("sugar"), 0);
+				else slots[18] = (ItemStack)null;
+				if(slots[0].stackTagCompound.getInteger("sustenance")>0) slots[19] = new ItemStack(Items.particle1, slots[0].stackTagCompound.getInteger("sustenance"), 1);
+				else slots[19] = (ItemStack)null;
+				
 				this.onInventoryChanged();
+			} else {
+				for(int i=2;i<20;i++){
+					slots[i]=(ItemStack)null;
+				}
+			}
+		}else {
+			for(int i=2;i<20;i++){
+				slots[i]=(ItemStack)null;
 			}
 		}
 		for(int i=18;i<34;i++){
