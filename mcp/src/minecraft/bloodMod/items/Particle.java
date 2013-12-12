@@ -29,22 +29,22 @@ return Names.particle_unlocalizedName[itemstack.getItemDamage()];
 public static Icon[] icons;
 
 private static final String[] ICON = {
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle",
-"particle"
+"particle0",
+"particle1",
+"particle2",
+"particle3",
+"particle4",
+"particle5",
+"particle6",
+"particle7",
+"particle8",
+"particle9",
+"particle10",
+"particle11",
+"particle12",
+"particle13",
+"particle14",
+"particle15"
 };
 
 @Override
