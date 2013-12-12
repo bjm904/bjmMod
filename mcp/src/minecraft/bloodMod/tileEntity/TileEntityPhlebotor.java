@@ -30,20 +30,7 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 	public static final int[] slots_sides = new int[]{1}; //slot one can be acceed from side with hopper
 	
 	private ItemStack[] slots = new ItemStack[39];
-	
-	
-	public int furnaceSpeed = 200;
-	
-	//how long this furnace will continue to burn for
-	public int burnTime;
-	
-	//start time for this fuel
-	public int currentItemBurnTime;
-	
-	//time left before cooked
-	public int cookTime;
 		
-	
 	public String getInvName(){
 		return this.isInvNameLocalized() ? this.localizedName : "container.phlebotor";
 	}
@@ -130,10 +117,6 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 			}
 		}
 		
-		this.burnTime = nbt.getShort("BurnTime");
-		this.cookTime = nbt.getShort("CookTime");
-		this.currentItemBurnTime = getItemBurnTime(this.slots[1]);/////////////////////////////////////////NOTE WHEN CHANGING WHERE FUEL IS PLACED
-		
 		if(nbt.hasKey("PhlebotorKey")){
 			this.localizedName = nbt.getString("PhlebotorKey");
 		}
@@ -141,9 +124,6 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 	
 	public void writeToNBT(NBTTagCompound nbt){
 		super.writeToNBT(nbt);
-		
-		nbt.setShort("BurnTime", (short)this.burnTime);
-		nbt.setShort("CookTime", (short)this.cookTime);
 		
 		NBTTagList list = new NBTTagList();
 		
@@ -171,10 +151,6 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 
 	public void openChest() {}
 	public void closeChest() {}
-	
-	public boolean isBurning(){
-		return this.burnTime > 0;
-	}
 	
 	public void updateEntity(){
 		
@@ -244,153 +220,34 @@ public class TileEntityPhlebotor extends TileEntity implements ISidedInventory{
 				//slots[i+2] = new ItemStack(Items.particle1, 1, i-34);
 			}
 		}
-		
-		
-		boolean flag = this.burnTime > 0;//flags for use later with changed state
-		boolean flag1 = false;//update inventory later
-		
-		if(this.burnTime > 0){
-			this.burnTime--;
-		}
-		if(!this.worldObj.isRemote){
-			if(this.burnTime == 0 && this.canSmelt()){
-				this.currentItemBurnTime = this.burnTime = getItemBurnTime(this.slots[1]);//set to fuel time
-				
-				if(this.burnTime > 0){
-					flag1 = true;
-					
-					if(this.slots[1] != null){
-						this.slots[1].stackSize--;//remove 1 fuel
-						
-						if(this.slots[1].stackSize == 0){
-							this.slots[1] = this.slots[1].getItem().getContainerItemStack(this.slots[1]);
-						}
-					}
-				}
-			}
-			if(this.isBurning() && this.canSmelt()){
-				this.cookTime++;//Advance the cooking
-				
-				if(this.cookTime == this.furnaceSpeed){//If the item is cooked
-					this.cookTime = 0;
-					this.smeltItem();
-					flag1 = true;
-				}
-				
-			}else{
-				this.cookTime = 0;
-			}
-			if(flag != this.burnTime > 0){//it changed
-				flag1 = true;
-				Phlebotor.updatePhlebotorBlockState(this.burnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord); //passes true if active
-			}
-			
-		}
-		
-		if(flag1){//We removed a fuel and updated the inventory
-			this.onInventoryChanged();
-		}
-	}
-	
-	private boolean canSmelt(){
-		if(this.slots[0] == null){
-			return false;
-		}else{
-			ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.slots[0]);
-			
-			if(itemstack == null) return false;
-			if(this.slots[2] == null) return true;
-			if(!this.slots[2].isItemEqual(itemstack)) return false;//check if result is the same as source item
-				
-			int result = this.slots[2].stackSize + itemstack.stackSize;//theoretically adds result of smelting and stack thats already in result slot
-			
-			return (result <= getInventoryStackLimit() && result <= itemstack.getMaxStackSize());//check stack size of output
-		}
-	}
-	public void smeltItem(){
-		if(this.canSmelt()){
-			ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.slots[0]);
-			
-			if(this.slots[2] == null){
-				this.slots[2] = itemstack.copy();
-			}else if(this.slots[2].isItemEqual(itemstack)){
-				this.slots[2].stackSize += itemstack.stackSize;
-			}
-			
-			this.slots[0].stackSize--;
-			
-			if(this.slots[0].stackSize <= 0){
-				this.slots[0] = null;//removes itemstack from slot
-			}
-			
-		}
-	}
-	
-	public static int getItemBurnTime(ItemStack itemstack){
-		if(itemstack == null){
-			return 0;
-		}else{
-			int i = itemstack.itemID; //set i to whatever we are querying
-			Item item = itemstack.getItem();
-			
-			if(item instanceof ItemBlock && Block.blocksList[i] != null){
-				Block block = Block.blocksList[i];
-				
-				if(block == Block.woodSingleSlab){
-					return 150;
-				}
-				if(block.blockMaterial == Material.wood){
-					return 300;
-				}
-			}
-			
-			if(item instanceof ItemTool && ((ItemTool) item).getToolMaterialName().equals("WOOD")) return 200; // wood makes wood tools burnable
-			if(item instanceof ItemSword && ((ItemSword) item).getToolMaterialName().equals("WOOD")) return 200;
-			if(item instanceof ItemHoe && ((ItemHoe) item).getMaterialName().equals("WOOD")) return 200;
-			
-			if(i == Item.appleGold.itemID) return 100;//FUEL VALUE
-			
-			return GameRegistry.getFuelValue(itemstack);
-		}
-	}
-	
-	public static boolean isItemFuel(ItemStack itemstack){
-		return getItemBurnTime(itemstack) > 0;
-	}
-
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
-		return i == 2 ? false : (i == 1 ? isItemFuel(itemstack) : true);
-	}
-
-
-	public int[] getAccessibleSlotsFromSide(int var1) {
-		return var1 == 0 ? slots_bottom : (var1 ==1 ? slots_top : slots_sides); // can a hopper acces from givin side
-	}
-
-
-	public boolean canInsertItem(int i, ItemStack itemstack, int j) {
-		return this.isItemValidForSlot(i, itemstack);//where does hopper put stuff
-	}
-
-
-	public boolean canExtractItem(int i, ItemStack itemstack, int j) {
-		return j != 0 ||  i !=1 || itemstack.itemID == Item.bucketEmpty.itemID; //slot not 0 or 1, or isa a bukkit.. a hopper can extract
-	}
-
-	public int getBurnTimeRemainingScaled(int i) {//For the burning animation
-		if(this.currentItemBurnTime == 0){
-			this.currentItemBurnTime = this.furnaceSpeed;
-		}
-		
-		return this.burnTime * i / this.currentItemBurnTime;
-	}
-	
-	public int getCookProgressScaled(int i){//For progress animation
-		return this.cookTime * i / this.furnaceSpeed;
 	}
 
 	public int getSizeInventory() {
 		return this.slots.length;
+	}
+
+	@Override
+	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int[] getAccessibleSlotsFromSide(int var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean canInsertItem(int i, ItemStack itemstack, int j) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean canExtractItem(int i, ItemStack itemstack, int j) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

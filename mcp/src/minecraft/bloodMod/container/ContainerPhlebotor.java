@@ -54,43 +54,9 @@ public class ContainerPhlebotor extends Container {
 		}
 	}
 	
-	public void addCraftingToCrafters(ICrafting icrafting){
-		super.addCraftingToCrafters(icrafting);//in container
-		icrafting.sendProgressBarUpdate(this, 0, this.phlebotor.cookTime);
-		icrafting.sendProgressBarUpdate(this, 1, this.phlebotor.burnTime);
-		icrafting.sendProgressBarUpdate(this, 2, this.phlebotor.currentItemBurnTime);
-	}
 	
 	public void detectAndSendChanges(){
 		super.detectAndSendChanges();//in container
-		
-		for(int i=0;i<this.crafters.size();i++){
-			ICrafting icrafting = (ICrafting)this.crafters.get(i);
-			
-			if(this.lastCookTime != this.phlebotor.cookTime){
-				icrafting.sendProgressBarUpdate(this, 0, this.phlebotor.cookTime);
-			}
-			if(this.lastBurnTime != this.phlebotor.burnTime){
-				icrafting.sendProgressBarUpdate(this, 1, this.phlebotor.burnTime);
-			}
-			if(this.lastItemBurnTime != this.phlebotor.currentItemBurnTime){
-				icrafting.sendProgressBarUpdate(this, 2, this.phlebotor.currentItemBurnTime);
-			}
-			
-
-			
-		}
-		
-		this.lastCookTime = this.phlebotor.cookTime;
-		this.lastBurnTime = this.phlebotor.burnTime;
-		this.lastItemBurnTime = this.phlebotor.currentItemBurnTime;
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public void updateProgressBar(int slot, int newValue){
-		if(slot == 0) this.phlebotor.cookTime = newValue;
-		if(slot == 1) this.phlebotor.burnTime = newValue;
-		if(slot == 2) this.phlebotor.currentItemBurnTime = newValue;
 	}
 	
 	public void checkStacksForNull(){
@@ -158,55 +124,41 @@ public class ContainerPhlebotor extends Container {
 	
 	public ItemStack transferStackInSlot(EntityPlayer player, int clickedSlotNumber){//Shift click
 		ItemStack itemstack = null;
-		Slot slot = (Slot)this.inventorySlots.get(clickedSlotNumber);
-		
-		if(slot != null && slot.getHasStack()){
-			ItemStack itemstack1 = slot.getStack();
-			itemstack = itemstack1.copy();
-			
-			if(clickedSlotNumber == 2){
-				if(!this.mergeItemStack(itemstack1, 3, 39, true)){///CHANGE ON CUSTOM SLOT 3 is starting slot
-					return null;
-				}
-				
-				slot.onSlotChange(itemstack1, itemstack);
-			}else if(clickedSlotNumber !=1 && clickedSlotNumber != 0){
-				if(FurnaceRecipes.smelting().getSmeltingResult(itemstack1) != null){
-					if(!this.mergeItemStack(itemstack1, 0, 1, false)){
-						return null;
-					}
-				}else if(TileEntityPhlebotor.isItemFuel(itemstack1)){
-					if(!this.mergeItemStack(itemstack1, 1, 2, false)){
-						return null;
-					}
-				}else if(clickedSlotNumber >= 3 && clickedSlotNumber < 30){
-					if(!this.mergeItemStack(itemstack1, 30, 39, false)){
-						return null;
-					}
-				}else if(clickedSlotNumber >=30 && clickedSlotNumber < 39){
-					if(!this.mergeItemStack(itemstack1, 3, 30, false)){
-						return null;
-					}
-				}
-			}else if(!this.mergeItemStack(itemstack1, 3, 39, false)){
-				return null;
-			}
-			
-			if(itemstack1.stackSize == 0){
-				slot.putStack((ItemStack)null);
-			}else{
-				slot.onSlotChanged();
-			}
-			
-			if(itemstack1.stackSize == itemstack.stackSize){
-				return null;
-			}
-			
-			slot.onPickupFromSlot(player, itemstack1);
-		}
-		
-		
-		return itemstack;
+        Slot slot = (Slot)this.inventorySlots.get(clickedSlotNumber);
+        
+        if(slot != null && slot.getHasStack()){
+                ItemStack itemstack1 = slot.getStack();
+                itemstack = itemstack1.copy();
+                
+                if(clickedSlotNumber !=1 && clickedSlotNumber != 0){
+                       	if(clickedSlotNumber >= 38 && clickedSlotNumber < 65){
+                                if(!this.mergeItemStack(itemstack1, 65, 74, false)){
+                                        return null;
+                                }
+                        }else if(clickedSlotNumber >=65 && clickedSlotNumber < 74){
+                                if(!this.mergeItemStack(itemstack1, 38, 65, false)){
+                                        return null;
+                                }
+                        }
+                }else if(!this.mergeItemStack(itemstack1, 38, 65, false)){
+                        return null;
+                }
+                
+                if(itemstack1.stackSize == 0){
+                        slot.putStack((ItemStack)null);
+                }else{
+                        slot.onSlotChanged();
+                }
+                
+                if(itemstack1.stackSize == itemstack.stackSize){
+                        return null;
+                }
+                
+                slot.onPickupFromSlot(player, itemstack1);
+        }
+        
+        
+        return itemstack;
 	}
 
 	public boolean canInteractWith(EntityPlayer entityplayer) {

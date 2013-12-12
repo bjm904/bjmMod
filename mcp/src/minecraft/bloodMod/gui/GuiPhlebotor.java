@@ -39,14 +39,6 @@ public class GuiPhlebotor extends GuiContainer{
 		
 		mc.getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
-		
-		if(this.phlebotor.isBurning()){
-			int k = this.phlebotor.getBurnTimeRemainingScaled(12);
-			drawTexturedModalRect(guiLeft+56, guiTop+36+12-k, 176, 12-k, 14, k+2);//first set is where its drawing, second is where in the texture it starts reading, third is width and height //// DRAWING FIRE
-		}
-		
-		int k = this.phlebotor.getCookProgressScaled(24);
-		drawTexturedModalRect(guiLeft+79, guiTop+34, 176, 14, k+1, 16);//DRAW PROGRESS ARROW
 	}
 
 	
