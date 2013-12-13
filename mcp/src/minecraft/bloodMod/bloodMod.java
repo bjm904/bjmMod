@@ -3,9 +3,12 @@ package bloodMod;
 import bloodMod.blocks.Blocks;
 import bloodMod.gui.GuiHandler;
 import bloodMod.items.Items;
+import net.minecraft.command.ICommandManager;
+import net.minecraft.command.ServerCommandManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
@@ -15,6 +18,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -31,6 +35,15 @@ public class bloodMod {
 	
 	@Instance(ModInfo.ID)
 	public static bloodMod instance;
+	
+	@EventHandler
+	public void serverStart(FMLServerStartingEvent event)
+	{
+	         MinecraftServer server = MinecraftServer.getServer();
+	         ICommandManager command = server.getCommandManager();
+	         ServerCommandManager manager = (ServerCommandManager) command;
+	         manager.registerCommand(new Commands());
+	}
 	
 	@EventHandler
 	public static void preInit( FMLPreInitializationEvent event ) {
