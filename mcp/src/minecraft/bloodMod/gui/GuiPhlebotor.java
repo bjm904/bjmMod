@@ -37,8 +37,8 @@ public class GuiPhlebotor extends GuiContainer{
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
 		GL11.glColor4f(1F, 1F, 1F, 1F);//RGBA
 		
-		mc.getTextureManager().bindTexture(texture);
-		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
+		//mc.getTextureManager().bindTexture(texture);
+		//drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 	}
 
 	

@@ -1,12 +1,18 @@
 package bloodMod.container;
 
+import java.util.Random;
+
+import bjmMod.Names;
 import bloodMod.Analyze;
 import bloodMod.Ids;
+import bloodMod.ModInfo;
 import bloodMod.PhlebotorSlot;
 import bloodMod.items.Items;
 import bloodMod.tileEntity.TileEntityPhlebotor;
+import cpw.mods.fml.common.network.Player;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -15,6 +21,11 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnace;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.ChatMessageComponent;
+import net.minecraft.util.ResourceLocation;
 
 public class ContainerPhlebotor extends Container {
 	
@@ -52,11 +63,18 @@ public class ContainerPhlebotor extends Container {
 		for(int i=0;i<9;i++){
 			this.addSlotToContainer(new Slot(inventory, i, 8+i*18, 202));
 		}
+		
+		for(int i=0;i<74;i++){
+			Slot slot = (Slot)this.inventorySlots.get(i);
+			ResourceLocation resource = new ResourceLocation(ModInfo.texture, "textures/gui/slotHolder.png");
+			slot.setBackgroundIconTexture(resource);
+		}
 	}
 	
 	
 	public void detectAndSendChanges(){
 		super.detectAndSendChanges();//in container
+		
 	}
 	
 	public void checkStacksForNull(){
@@ -70,11 +88,31 @@ public class ContainerPhlebotor extends Container {
 				}
 			}
 		}
+		Slot slot = (Slot)this.inventorySlots.get(0);
+		if(slot.getHasStack()){
+			ItemStack itemstack=slot.getStack();
+			int setAmount=11;
+			for(int i=10;i>0;i--){
+				int checkParts = 0;
+				for(int o=0;o<18;o++){
+					checkParts += itemstack.getTagCompound().getInteger(i+"particle"+o);
+				}
+				MinecraftServer.getServer().getConfigurationManager().sendChatMsg(ChatMessageComponent.createFromText(""+checkParts));
+				if(checkParts == 0){
+					setAmount=i;
+				}
+			}
+			MinecraftServer.getServer().getConfigurationManager().sendChatMsg(ChatMessageComponent.createFromText("Set Amount: "+setAmount));
+			NBTTagCompound nbtcopy = (NBTTagCompound) itemstack.stackTagCompound.copy();
+			slot.putStack(new ItemStack(itemstack.itemID, 1, setAmount-1));
+			slot.getStack().setTagCompound(nbtcopy);
+		}
 	}
 	
 	@Override
 	public ItemStack slotClick(int slotnum, int par2, int par3, EntityPlayer player){
 		checkStacksForNull();
+		Random rand = new Random();
 		ItemStack itemstack = super.slotClick(slotnum, par2, par3, player);
 		Slot slot;
 		if(slotnum>=0){//Need this to work
@@ -86,31 +124,37 @@ public class ContainerPhlebotor extends Container {
 			ItemStack itemstack1 = slot.getStack();
 			Slot slot0 = (Slot)this.inventorySlots.get(0);
 			ItemStack itemstack0 = slot0.getStack();
-			String[] names= {"aqua","archier","darkness","day","death","diamond","echo","end","fear","feather","flame","gunpowder","iron","light","race","spring","sugar","sustenance"};
-
+		
 			
 			if(slotnum >= 2 && slotnum <= 19){
 				int namenum=slotnum-2;
+				String removParticle = "";
 				Slot slot2 = (Slot)this.inventorySlots.get(slotnum+18);
 				ItemStack itemstack2 = slot2.getStack();
-				if(itemstack2 != null && itemstack1 != null){
-					if(itemstack0.getTagCompound().getInteger(names[namenum])>0){
-						itemstack0.getTagCompound().setInteger(names[namenum], itemstack0.getTagCompound().getInteger(names[namenum])-1);
+				for(int i=0;i<10;i++){
+					if(itemstack0.getTagCompound().getInteger((itemstack0.getItemDamage()-i)+"particle"+namenum)>0){
+						removParticle = (itemstack0.getItemDamage()-i)+"particle"+namenum;
+						break;
+					}
+				}
+				if(itemstack2 != null && itemstack1 != null && itemstack0 != null){
+					if(itemstack0.getTagCompound().getInteger(removParticle)>0){
+						itemstack0.getTagCompound().setInteger(removParticle, itemstack0.getTagCompound().getInteger(removParticle)-1);
 					}
 					itemstack2.stackSize++;
-				}else if(itemstack2 == null){
-					if(itemstack0.getTagCompound().getInteger(names[namenum])>0){
-						itemstack0.getTagCompound().setInteger(names[namenum], itemstack0.getTagCompound().getInteger(names[namenum])-1);
+				}else if(itemstack2 == null && itemstack0 != null){
+					if(itemstack0.getTagCompound().getInteger(removParticle)>0){
+						itemstack0.getTagCompound().setInteger(removParticle, itemstack0.getTagCompound().getInteger(removParticle)-1);
 					}
 					slot2.putStack(new ItemStack(itemstack1.itemID, 1, itemstack1.getItemDamage()));
 				}
 				checkStacksForNull();
 				return null;
 			}else if(slotnum >= 20 && slotnum <= 38){
-				int namenum=slotnum-20;
-				if(itemstack1 != null){
+				if(itemstack1 != null && itemstack0 != null){
 					itemstack1.stackSize--;
-					itemstack0.getTagCompound().setInteger(names[namenum], itemstack0.getTagCompound().getInteger(names[namenum])+1);
+					int level = rand.nextInt(itemstack0.getItemDamage()+1);
+					itemstack0.getTagCompound().setInteger(level+"particle"+(slotnum-20), itemstack0.getTagCompound().getInteger(level+"particle"+(slotnum-20))+1);
 				}
 				checkStacksForNull();
 				return null;
