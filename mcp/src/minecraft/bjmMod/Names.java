@@ -108,4 +108,7 @@ public class Names {
 	public static final String inverterActive_name = "Inverter Active";
 	public static final String inverterIdle_unlocalizedName = "inverterIdle";
 	public static final String inverterIdle_name = "Inverter";
+	
+	public static final String battlePortal_unlocalizedName = "battlePortal";
+	public static final String battlePortal_name = "Battle Portal";
 }

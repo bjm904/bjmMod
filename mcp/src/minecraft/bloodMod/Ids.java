@@ -77,7 +77,6 @@ public class Ids {
 	public static final int phlebotorIdle_default = 2832;
 	
 	
-	
 	public static final int guiIdPhlebotor = 0;
 	
 

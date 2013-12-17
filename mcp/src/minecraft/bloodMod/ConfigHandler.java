@@ -48,6 +48,7 @@ Ids.particle1 = config.getItem("Particle Set 1", Ids.particle1_default).getInt()
 Ids.phlebotorActive = config.getBlock(Names.phlebotorActive_name, Ids.phlebotorActive_default).getInt();
 Ids.phlebotorIdle = config.getBlock(Names.phlebotorIdle_name, Ids.phlebotorIdle_default).getInt();
 
+
 config.save();
 }
 }

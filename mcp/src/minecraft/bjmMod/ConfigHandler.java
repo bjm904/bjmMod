@@ -3,6 +3,8 @@ package bjmMod;
 import java.io.File;
 
 import bjmMod.blocks.help.AquaSaplingMeta;
+import bjmMod.Ids;
+import bjmMod.Names;
 import net.minecraftforge.common.Configuration;
 
 public class ConfigHandler {
@@ -62,7 +64,7 @@ Ids.aquaLeaves = config.getBlock("Aqua Leaves", Ids.aquaLeaves_default).getInt()
 Ids.inverterActive = config.getBlock(Names.inverterActive_name, Ids.inverterActive_default).getInt();
 Ids.inverterIdle = config.getBlock(Names.inverterIdle_name, Ids.inverterIdle_default).getInt();
 
-
+Ids.battlePortal = config.getBlock(Names.battlePortal_name, Ids.battlePortal_default).getInt();
 
 config.save();
 }

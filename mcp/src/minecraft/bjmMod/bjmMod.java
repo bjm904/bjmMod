@@ -3,6 +3,7 @@ package bjmMod;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import bjmMod.blocks.Blocks;
@@ -17,6 +18,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod( modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION )
@@ -33,6 +35,7 @@ public class bjmMod {
 	@Instance(ModInfo.ID)
 	public static bjmMod instance;
 	
+	public static int battleDimensionId = 8;
 	
 	
 	@EventHandler
@@ -48,8 +51,10 @@ public class bjmMod {
 		Blocks.registerTileEntities();
 		EnumToolMaterial dMac = EnumHelper.addToolMaterial("Ruby", 3, 64, 100.0F, 3, 15);
 		NetworkRegistry.instance().registerGuiHandler(instance, new GuiHandler());
-		
 		LanguageRegistry.instance().addStringLocalization("container.inverter", "Inverter");
+		
+		DimensionManager.registerProviderType(bjmMod.battleDimensionId, BattleDimension.class, false);
+		DimensionManager.registerDimension(bjmMod.battleDimensionId, bjmMod.battleDimensionId);
 		
     };
 

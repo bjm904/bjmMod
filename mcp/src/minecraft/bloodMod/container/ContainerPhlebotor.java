@@ -88,24 +88,24 @@ public class ContainerPhlebotor extends Container {
 				}
 			}
 		}
-		Slot slot = (Slot)this.inventorySlots.get(0);
+		Slot slot = (Slot)this.inventorySlots.get(0);         
 		if(slot.getHasStack()){
 			ItemStack itemstack=slot.getStack();
 			int setAmount=11;
 			for(int i=10;i>0;i--){
 				int checkParts = 0;
 				for(int o=0;o<18;o++){
-					checkParts += itemstack.getTagCompound().getInteger(i+"particle"+o);
+				//	checkParts += itemstack.getTagCompound().getInteger(i+"particle"+o);
 				}
-				MinecraftServer.getServer().getConfigurationManager().sendChatMsg(ChatMessageComponent.createFromText(""+checkParts));
+				//MinecraftServer.getServer().getConfigurationManager().sendChatMsg(ChatMessageComponent.createFromText(""+checkParts));
 				if(checkParts == 0){
-					setAmount=i;
+				//	setAmount=i;
 				}
 			}
-			MinecraftServer.getServer().getConfigurationManager().sendChatMsg(ChatMessageComponent.createFromText("Set Amount: "+setAmount));
-			NBTTagCompound nbtcopy = (NBTTagCompound) itemstack.stackTagCompound.copy();
-			slot.putStack(new ItemStack(itemstack.itemID, 1, setAmount-1));
-			slot.getStack().setTagCompound(nbtcopy);
+			//MinecraftServer.getServer().getConfigurationManager().sendChatMsg(ChatMessageComponent.createFromText("Set Amount: "+setAmount));
+			//NBTTagCompound nbtcopy = (NBTTagCompound) itemstack.stackTagCompound.copy();
+			//slot.putStack(new ItemStack(itemstack.itemID, 1, setAmount-1));
+			//slot.getStack().setTagCompound(nbtcopy);
 		}
 	}
 	
@@ -124,47 +124,45 @@ public class ContainerPhlebotor extends Container {
 			ItemStack itemstack1 = slot.getStack();
 			Slot slot0 = (Slot)this.inventorySlots.get(0);
 			ItemStack itemstack0 = slot0.getStack();
-		
-			
-			if(slotnum >= 2 && slotnum <= 19){
-				int namenum=slotnum-2;
-				String removParticle = "";
-				Slot slot2 = (Slot)this.inventorySlots.get(slotnum+18);
-				ItemStack itemstack2 = slot2.getStack();
-				for(int i=0;i<10;i++){
-					if(itemstack0.getTagCompound().getInteger((itemstack0.getItemDamage()-i)+"particle"+namenum)>0){
-						removParticle = (itemstack0.getItemDamage()-i)+"particle"+namenum;
-						break;
+				
+				if(slotnum >= 2 && slotnum <= 19){
+					int namenum=slotnum-2;
+					String removParticle = "";
+					Slot slot2 = (Slot)this.inventorySlots.get(slotnum+18);
+					ItemStack itemstack2 = slot2.getStack();
+					for(int i=0;i<10;i++){
+						if(itemstack0.getTagCompound().getInteger((itemstack0.getItemDamage()-i)+"particle"+namenum)>0){
+							removParticle = (itemstack0.getItemDamage()-i)+"particle"+namenum;
+							break;
+						}
 					}
-				}
-				if(itemstack2 != null && itemstack1 != null && itemstack0 != null){
-					if(itemstack0.getTagCompound().getInteger(removParticle)>0){
-						itemstack0.getTagCompound().setInteger(removParticle, itemstack0.getTagCompound().getInteger(removParticle)-1);
+					if(itemstack2 != null && itemstack1 != null && itemstack0 != null){
+						if(itemstack0.getTagCompound().getInteger(removParticle)>0){
+							itemstack0.getTagCompound().setInteger(removParticle, itemstack0.getTagCompound().getInteger(removParticle)-1);
+						}
+						itemstack2.stackSize++;
+					}else if(itemstack2 == null && itemstack0 != null){
+						if(itemstack0.getTagCompound().getInteger(removParticle)>0){
+							itemstack0.getTagCompound().setInteger(removParticle, itemstack0.getTagCompound().getInteger(removParticle)-1);
+						}
+						slot2.putStack(new ItemStack(itemstack1.itemID, 1, itemstack1.getItemDamage()));
 					}
-					itemstack2.stackSize++;
-				}else if(itemstack2 == null && itemstack0 != null){
-					if(itemstack0.getTagCompound().getInteger(removParticle)>0){
-						itemstack0.getTagCompound().setInteger(removParticle, itemstack0.getTagCompound().getInteger(removParticle)-1);
+					checkStacksForNull();
+					return null;
+				}else if(slotnum >= 20 && slotnum <= 38){
+					if(itemstack1 != null && itemstack0 != null){
+						if(player.capabilities.isCreativeMode || player.experienceLevel > 0)
+						if(!player.capabilities.isCreativeMode) player.experienceLevel =-1;
+						itemstack1.stackSize--;
+						int level = rand.nextInt(itemstack0.getItemDamage()+1);
+						itemstack0.getTagCompound().setInteger(level+"particle"+(slotnum-20), itemstack0.getTagCompound().getInteger(level+"particle"+(slotnum-20))+1);
 					}
-					slot2.putStack(new ItemStack(itemstack1.itemID, 1, itemstack1.getItemDamage()));
+					checkStacksForNull();	
+					return null;
 				}
-				checkStacksForNull();
-				return null;
-			}else if(slotnum >= 20 && slotnum <= 38){
-				if(itemstack1 != null && itemstack0 != null){
-					itemstack1.stackSize--;
-					int level = rand.nextInt(itemstack0.getItemDamage()+1);
-					itemstack0.getTagCompound().setInteger(level+"particle"+(slotnum-20), itemstack0.getTagCompound().getInteger(level+"particle"+(slotnum-20))+1);
-				}
-				checkStacksForNull();
-				return null;
 			}
-		}
-
 		return itemstack;
-		
 	 }
-	
 	
 	public ItemStack transferStackInSlot(EntityPlayer player, int clickedSlotNumber){//Shift click
 		ItemStack itemstack = null;

@@ -45,6 +45,7 @@ public static Block aerobreezeLeaves;
 public static Block aquaLeaves;
 public static Block inverterActive;
 public static Block inverterIdle;
+public static Block battlePortal;
 
 public static void init() {
 
@@ -90,10 +91,14 @@ inverterActive = new Inverter(Ids.inverterActive, true).setUnlocalizedName(Names
 GameRegistry.registerBlock(inverterActive, Names.inverterActive_unlocalizedName);
 inverterIdle = new Inverter(Ids.inverterIdle, false).setUnlocalizedName(Names.inverterIdle_unlocalizedName).setCreativeTab(bjmMod.CreativeTabBjmMod);;
 GameRegistry.registerBlock(inverterIdle, Names.inverterIdle_unlocalizedName);
+
+battlePortal = new BattlePortal(Ids.battlePortal).setUnlocalizedName(Names.battlePortal_unlocalizedName).setCreativeTab(bjmMod.CreativeTabBjmMod);;
+GameRegistry.registerBlock(battlePortal, Names.battlePortal_unlocalizedName);
 }
 
 public static void addNames() {
 LanguageRegistry.addName(inverterIdle, Names.inverterIdle_name);
+LanguageRegistry.addName(battlePortal, Names.battlePortal_name);
 
 
 for(int i = 0; i < Names.nightendSapling_name.length; i++) {

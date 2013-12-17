@@ -75,4 +75,5 @@ public class Names {
 	public static final String phlebotorActive_name = "Phlebotor Active";
 	public static final String phlebotorIdle_unlocalizedName = "phlebotorIdle";
 	public static final String phlebotorIdle_name = "Phlebotor";
+	
 }

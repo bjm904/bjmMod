@@ -106,6 +106,9 @@ public class Ids {
 	public static final int inverterIdle_default = 3817;
 	
 	
+	public static int battlePortal;
+	public static final int battlePortal_default = 3818;
+	
 	
 	public static final int guiIdInverter = 0;
 }
