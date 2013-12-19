@@ -81,15 +81,22 @@ public class Ids {
 	
 	
 	public static int shieldDiamond;
-	public static final int shieldDiamond_default = 30038;
+	public static final int shieldDiamond_default = 30036;
 	public static int shieldGold;
-	public static final int shieldGold_default = 30039;
+	public static final int shieldGold_default = 30037;
 	public static int shieldIron;
-	public static final int shieldIron_default = 30040;
+	public static final int shieldIron_default = 30038;
 	public static int shieldStone;
-	public static final int shieldStone_default = 30041;
+	public static final int shieldStone_default = 30039;
 	public static int shieldWood;
-	public static final int shieldWood_default = 30042;
+	public static final int shieldWood_default = 30040;
+	
+	public static int scalpel;
+	public static final int scalpel_default = 30041;
+	public static int scalpelDiamond;
+	public static final int scalpelDiamond_default = 30042;
+	
+	
 	
 	
 	public static int nightendSapling;

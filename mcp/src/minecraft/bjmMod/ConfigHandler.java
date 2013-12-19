@@ -53,6 +53,8 @@ Ids.shieldGold = config.getItem(Names.shieldGold_name, Ids.shieldGold_default).g
 Ids.shieldIron = config.getItem(Names.shieldIron_name, Ids.shieldIron_default).getInt() - 256;
 Ids.shieldStone = config.getItem(Names.shieldStone_name, Ids.shieldStone_default).getInt() - 256;
 Ids.shieldWood = config.getItem(Names.shieldWood_name, Ids.shieldWood_default).getInt() - 256;
+Ids.scalpel = config.getItem(Names.scalpel_name, Ids.scalpel_default).getInt() - 256;
+Ids.scalpelDiamond = config.getItem(Names.scalpelDiamond_name, Ids.scalpelDiamond_default).getInt() - 256;
 
 
 Ids.nightendSapling = config.getBlock("Nightend Sapling", Ids.nightendSapling_default).getInt();

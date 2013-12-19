@@ -59,6 +59,8 @@ public class Items {
 	public static Item shieldIron;
 	public static Item shieldStone;
 	public static Item shieldWood;
+	public static Item scalpel;
+	public static Item scalpelDiamond;
 	
 	public static void init() {
 		macuahuitlDiamond = new MacuahuitlDiamond(Ids.macuahuitlDiamond, EnumToolMaterial.EMERALD);
@@ -110,6 +112,10 @@ public class Items {
 		lunite = new Lunite(Ids.lunite);
 		solidParticle = new SolidParticle(Ids.solidParticle);
 		core = new Core(Ids.core);
+		
+		scalpel = new Scalpel(Ids.scalpel, false, Names.scalpel_unlocalizedName);
+		scalpelDiamond = new Scalpel(Ids.scalpelDiamond, true, Names.scalpelDiamond_unlocalizedName);
+		
 	}
 	public static void addNames() {
 		LanguageRegistry.addName(macuahuitlDiamond, Names.macuahuitlDiamond_name);
@@ -159,5 +165,8 @@ public class Items {
 		LanguageRegistry.addName(lunite, Names.lunite_name);
 		LanguageRegistry.addName(solidParticle, Names.solidParticle_name);
 		LanguageRegistry.addName(core, Names.core_name);
+		
+		LanguageRegistry.addName(scalpel, Names.scalpel_name);
+		LanguageRegistry.addName(scalpelDiamond, Names.scalpelDiamond_name);
 	}
 }

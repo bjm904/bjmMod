@@ -59,7 +59,10 @@ public class Names {
 	public static final String sunSlayerOff_unlocalizedName = "sunSlayerOff";
 	public static final String sunSlayerOff_name = "Sun Slayer Off";
 	
-
+	public static final String scalpel_unlocalizedName = "scalpel";
+	public static final String scalpel_name = "Scalpel";
+	public static final String scalpelDiamond_unlocalizedName = "scalpelDiamond";
+	public static final String scalpelDiamond_name = "Scalpel Diamond";
 	
 	public static final String shieldDiamond_unlocalizedName = "shieldDiamond";
 	public static final String shieldDiamond_name = "Diamond Shield";
