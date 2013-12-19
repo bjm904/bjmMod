@@ -24,21 +24,26 @@ public class GuiPhlebotor extends GuiContainer{
 		this.phlebotor = entity;
 		
 		this.xSize = 176;
-		this.ySize = 236;//166 default
+		this.ySize = 247;//166 default
 	}
 	
 	public void drawGuiContainerForegroundLayer(int par1, int par2){
 		String name = this.phlebotor.isInvNameLocalized() ? this.phlebotor.getInvName() : I18n.getString(this.phlebotor.getInvName());
 		
 		this.fontRenderer.drawString(name, this.xSize / 2 - this.fontRenderer.getStringWidth(name) / 2, 6, 4210752);
+		this.fontRenderer.drawString("Blood Contents", 8, 54, 4210752);
+		this.fontRenderer.drawString("Particle Storage", 8, 104, 4210752);
 		this.fontRenderer.drawString(I18n.getString("container.inventory"), 8, this.ySize-96+2, 4210752);
 	}
 
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
 		GL11.glColor4f(1F, 1F, 1F, 1F);//RGBA
 		
-		//mc.getTextureManager().bindTexture(texture);
-		//drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
+		mc.getTextureManager().bindTexture(texture);
+		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
+		
+		//drawTexturedModalRect(guiLeft+56, guiTop+36+12-k, 176, 12-k, 14, k+2);//first set is where its drawing, second is where in the texture it starts reading, third is width and height //// DRAWING FIRE
+		
 	}
 
 	

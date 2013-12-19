@@ -40,28 +40,28 @@ public class ContainerPhlebotor extends Container {
 	public ContainerPhlebotor(InventoryPlayer inventory, TileEntityPhlebotor tileentity){
 		this.phlebotor = tileentity;
 		
-		this.addSlotToContainer(new Slot(tileentity, 0, 5, 17));
-		this.addSlotToContainer(new Slot(tileentity, 1, 105, 17));
+		this.addSlotToContainer(new Slot(tileentity, 0, 9, 19));
+		this.addSlotToContainer(new Slot(tileentity, 1, 135, 19));
 		
 		for(int i=0;i<2;i++){
 			for(int j=0;j<9;j++){
-				this.addSlotToContainer(new PhlebotorSlot(tileentity, j+i*9+2, 8+j*18, 48+i*18));
+				this.addSlotToContainer(new PhlebotorSlot(tileentity, j+i*9+2, 8+j*18, 65+i*18));
 			}
 		}
 		
 		for(int i=0;i<2;i++){
 			for(int j=0;j<9;j++){
-				this.addSlotToContainer(new PhlebotorSlot(tileentity, j+i*9+20, 8+j*18, 95+i*18));
+				this.addSlotToContainer(new PhlebotorSlot(tileentity, j+i*9+20, 8+j*18, 115+i*18));
 			}
 		}
 		for(int i=0;i<3;i++){
 			for(int j=0;j<9;j++){
-				this.addSlotToContainer(new Slot(inventory, j+i*9+9, 8+j*18, 144+i*18));
+				this.addSlotToContainer(new Slot(inventory, j+i*9+9, 8+j*18, 165+i*18));
 			}
 		}
 		
 		for(int i=0;i<9;i++){
-			this.addSlotToContainer(new Slot(inventory, i, 8+i*18, 202));
+			this.addSlotToContainer(new Slot(inventory, i, 8+i*18, 223));
 		}
 		
 		for(int i=0;i<74;i++){
