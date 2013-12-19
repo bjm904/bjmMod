@@ -79,10 +79,6 @@ public class Ids {
 	public static int sunSlayerOff;
 	public static final int sunSlayerOff_default = 30035;
 	
-	public static int moonSword;
-	public static final int moonSword_default = 30036;
-	public static int moonSwordOff;
-	public static final int moonSwordOff_default = 30037;
 	
 	public static int shieldDiamond;
 	public static final int shieldDiamond_default = 30038;

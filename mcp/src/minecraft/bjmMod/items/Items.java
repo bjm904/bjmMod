@@ -11,7 +11,6 @@ import bjmMod.items.combat.MacuahuitlIron;
 import bjmMod.items.combat.MacuahuitlStone;
 import bjmMod.items.combat.MacuahuitlWood;
 import bjmMod.items.combat.MoonSlayer;
-import bjmMod.items.combat.MoonSword;
 import bjmMod.items.combat.Scythe;
 import bjmMod.items.combat.Shield;
 import bjmMod.items.combat.SunSlayer;
@@ -55,8 +54,6 @@ public class Items {
 	public static Item moonSlayerOff;
 	public static Item sunSlayer;
 	public static Item sunSlayerOff;
-	public static Item moonSword;
-	public static Item moonSwordOff;
 	public static Item shieldDiamond;
 	public static Item shieldGold;
 	public static Item shieldIron;
@@ -89,9 +86,6 @@ public class Items {
 		moonSlayerOff = new MoonSlayer(Ids.moonSlayerOff, EnumToolMaterial.EMERALD, 3000, 40F, Names.moonSlayerOff_unlocalizedName, false);
 		sunSlayer = new SunSlayer(Ids.sunSlayer, EnumToolMaterial.EMERALD, 3000, 40F, Names.sunSlayer_unlocalizedName, true);
 		sunSlayerOff = new SunSlayer(Ids.sunSlayerOff, EnumToolMaterial.EMERALD, 3000, 40F, Names.sunSlayerOff_unlocalizedName, false);
-		
-		moonSword = new MoonSword(Ids.moonSword, EnumToolMaterial.EMERALD, 3000, 40F, Names.moonSword_unlocalizedName, true);
-		moonSwordOff = new MoonSword(Ids.moonSwordOff, EnumToolMaterial.EMERALD, 3000, 40F, Names.moonSwordOff_unlocalizedName, false);
 		
 		shieldDiamond = new Shield(Ids.shieldDiamond, EnumToolMaterial.EMERALD, 3000, 40F, Names.shieldDiamond_unlocalizedName);
 		shieldGold = new Shield(Ids.shieldGold, EnumToolMaterial.GOLD, 3000, 40F, Names.shieldGold_unlocalizedName);
@@ -152,9 +146,7 @@ public class Items {
 		LanguageRegistry.addName(moonSlayerOff, Names.moonSlayerOff_name);
 		LanguageRegistry.addName(sunSlayer, Names.sunSlayer_name);
 		LanguageRegistry.addName(sunSlayerOff, Names.sunSlayerOff_name);
-		
-		LanguageRegistry.addName(moonSword, Names.moonSword_name);
-		LanguageRegistry.addName(moonSwordOff, Names.moonSwordOff_name);
+
 		
 		LanguageRegistry.addName(shieldDiamond, Names.shieldDiamond_name);
 		LanguageRegistry.addName(shieldGold, Names.shieldGold_name);
