@@ -42,6 +42,19 @@ Ids.scytheGold = config.getItem(Names.scytheGold_name, Ids.scytheGold_default).g
 Ids.scytheIron = config.getItem(Names.scytheIron_name, Ids.scytheIron_default).getInt() - 256;
 Ids.scytheStone = config.getItem(Names.scytheStone_name, Ids.scytheStone_default).getInt() - 256;
 Ids.scytheWood = config.getItem(Names.scytheWood_name, Ids.scytheWood_default).getInt() - 256;
+Ids.godSlayer = config.getItem(Names.godSlayer_name, Ids.godSlayer_default).getInt() - 256;
+Ids.godSlayerOff = config.getItem(Names.godSlayerOff_name, Ids.godSlayerOff_default).getInt() - 256;
+Ids.moonSlayer = config.getItem(Names.moonSlayer_name, Ids.moonSlayer_default).getInt() - 256;
+Ids.moonSlayerOff = config.getItem(Names.moonSlayerOff_name, Ids.moonSlayerOff_default).getInt() - 256;
+Ids.sunSlayer = config.getItem(Names.sunSlayer_name, Ids.sunSlayer_default).getInt() - 256;
+Ids.sunSlayerOff = config.getItem(Names.sunSlayerOff_name, Ids.sunSlayerOff_default).getInt() - 256;
+Ids.moonSword = config.getItem(Names.moonSword_name, Ids.moonSword_default).getInt() - 256;
+Ids.moonSwordOff = config.getItem(Names.moonSwordOff_name, Ids.moonSwordOff_default).getInt() - 256;
+Ids.shieldDiamond = config.getItem(Names.shieldDiamond_name, Ids.shieldDiamond_default).getInt() - 256;
+Ids.shieldGold = config.getItem(Names.shieldGold_name, Ids.shieldGold_default).getInt() - 256;
+Ids.shieldIron = config.getItem(Names.shieldIron_name, Ids.shieldIron_default).getInt() - 256;
+Ids.shieldStone = config.getItem(Names.shieldStone_name, Ids.shieldStone_default).getInt() - 256;
+Ids.shieldWood = config.getItem(Names.shieldWood_name, Ids.shieldWood_default).getInt() - 256;
 
 
 Ids.nightendSapling = config.getBlock("Nightend Sapling", Ids.nightendSapling_default).getInt();

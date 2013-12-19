@@ -66,6 +66,35 @@ public class Ids {
 	public static int scytheWood;
 	public static final int scytheWood_default = 30029;
 	
+	public static int godSlayer;
+	public static final int godSlayer_default = 30030;
+	public static int godSlayerOff;
+	public static final int godSlayerOff_default = 30031;
+	public static int moonSlayer;
+	public static final int moonSlayer_default = 30032;
+	public static int moonSlayerOff;
+	public static final int moonSlayerOff_default = 30033;
+	public static int sunSlayer;
+	public static final int sunSlayer_default = 30034;
+	public static int sunSlayerOff;
+	public static final int sunSlayerOff_default = 30035;
+	
+	public static int moonSword;
+	public static final int moonSword_default = 30036;
+	public static int moonSwordOff;
+	public static final int moonSwordOff_default = 30037;
+	
+	public static int shieldDiamond;
+	public static final int shieldDiamond_default = 30038;
+	public static int shieldGold;
+	public static final int shieldGold_default = 30039;
+	public static int shieldIron;
+	public static final int shieldIron_default = 30040;
+	public static int shieldStone;
+	public static final int shieldStone_default = 30041;
+	public static int shieldWood;
+	public static final int shieldWood_default = 30042;
+	
 	
 	public static int nightendSapling;
 	public static final int nightendSapling_default = 3800;

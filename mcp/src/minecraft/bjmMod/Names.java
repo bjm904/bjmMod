@@ -45,6 +45,36 @@ public class Names {
 	public static final String glaiveWood_unlocalizedName = "glaiveWood";
 	public static final String glaiveWood_name = "Wood Glaive";
 	
+	public static final String godSlayer_unlocalizedName = "godSlayer";
+	public static final String godSlayer_name = "God Slayer";
+	public static final String moonSlayer_unlocalizedName = "moonSlayer";
+	public static final String moonSlayer_name = "Moon Slayer";
+	public static final String sunSlayer_unlocalizedName = "sunSlayer";
+	public static final String sunSlayer_name = "Sun Slayer";
+	
+	public static final String godSlayerOff_unlocalizedName = "godSlayerOff";
+	public static final String godSlayerOff_name = "God Slayer Off";
+	public static final String moonSlayerOff_unlocalizedName = "moonSlayerOff";
+	public static final String moonSlayerOff_name = "Moon Slayer Off";
+	public static final String sunSlayerOff_unlocalizedName = "sunSlayerOff";
+	public static final String sunSlayerOff_name = "Sun Slayer Off";
+	
+	public static final String moonSword_unlocalizedName = "moonSword";
+	public static final String moonSword_name = "Moon Sword";
+	public static final String moonSwordOff_unlocalizedName = "moonSwordOff";
+	public static final String moonSwordOff_name = "Moon Sword Off";
+	
+	public static final String shieldDiamond_unlocalizedName = "shieldDiamond";
+	public static final String shieldDiamond_name = "Diamond Shield";
+	public static final String shieldGold_unlocalizedName = "shieldGold";
+	public static final String shieldGold_name = "Gold Shield";
+	public static final String shieldIron_unlocalizedName = "shieldIron";
+	public static final String shieldIron_name = "Iron Shield";
+	public static final String shieldStone_unlocalizedName = "shieldStone";
+	public static final String shieldStone_name = "Stone Shield";
+	public static final String shieldWood_unlocalizedName = "shieldWood";
+	public static final String shieldWood_name = "Wood Shield";
+	
 	public static final String scytheDiamond_unlocalizedName = "scytheDiamond";
 	public static final String scytheDiamond_name = "Diamond Scythe";
 	public static final String scytheGold_unlocalizedName = "scytheGold";
