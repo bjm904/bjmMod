@@ -154,22 +154,22 @@ public class TeleporterBattleDimension extends Teleporter {
 	            d4 = (double)k + 0.5D;
 	            int j2 = -1;
 
-	            if (this.worldServerInstance.getBlockId(i - 1, j, k) == Block.portal.blockID)
+	            if (this.worldServerInstance.getBlockId(i - 1, j, k) == Blocks.battlePortal.blockID)
 	            {
 	                j2 = 2;
 	            }
 
-	            if (this.worldServerInstance.getBlockId(i + 1, j, k) == Block.portal.blockID)
+	            if (this.worldServerInstance.getBlockId(i + 1, j, k) == Blocks.battlePortal.blockID)
 	            {
 	                j2 = 0;
 	            }
 
-	            if (this.worldServerInstance.getBlockId(i, j, k - 1) == Block.portal.blockID)
+	            if (this.worldServerInstance.getBlockId(i, j, k - 1) == Blocks.battlePortal.blockID)
 	            {
 	                j2 = 3;
 	            }
 
-	            if (this.worldServerInstance.getBlockId(i, j, k + 1) == Block.portal.blockID)
+	            if (this.worldServerInstance.getBlockId(i, j, k + 1) == Blocks.battlePortal.blockID)
 	            {
 	                j2 = 1;
 	            }
@@ -470,7 +470,7 @@ public class TeleporterBattleDimension extends Teleporter {
 	                    j3 = j5 + l2;
 	                    i4 = j2 + (i3 - 1) * l5;
 	                    flag = i3 == 0 || i3 == 3 || l2 == -1 || l2 == 3;
-	                    this.worldServerInstance.setBlock(k3, j3, i4, flag ? Block.obsidian.blockID : Block.portal.blockID, 0, 2);
+	                    this.worldServerInstance.setBlock(k3, j3, i4, flag ? Block.obsidian.blockID : Blocks.battlePortal.blockID, 0, 2);
 	                }
 	            }
 

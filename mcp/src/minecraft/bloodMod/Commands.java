@@ -3,6 +3,8 @@ package bloodMod;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.src.ModLoader;
 
 public class Commands extends CommandBase{
 
@@ -26,6 +28,7 @@ public class Commands extends CommandBase{
 		if(icommandsender instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) icommandsender;
 			player.addChatMessage(player.inventory.getCurrentItem().getTagCompound().toString());
+			player.addChatMessage(""+MinecraftServer.getServer().getTickCounter());
 		}
 	}
 

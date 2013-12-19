@@ -3,10 +3,13 @@ package bjmMod;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
+import bjmMod.biome.BiomeGenBattle;
 import bjmMod.blocks.Blocks;
+import bjmMod.dimension.WorldProviderBattle;
 import bjmMod.gui.GuiHandler;
 import bjmMod.items.Items;
 import cpw.mods.fml.common.Mod;
@@ -35,6 +38,8 @@ public class bjmMod {
 	@Instance(ModInfo.ID)
 	public static bjmMod instance;
 	
+	public static BiomeGenBase biomeBattle;
+	
 	public static int battleDimensionId = 8;
 	
 	
@@ -50,11 +55,15 @@ public class bjmMod {
 		Blocks.addNames();
 		Blocks.registerTileEntities();
 		EnumToolMaterial dMac = EnumHelper.addToolMaterial("Ruby", 3, 64, 100.0F, 3, 15);
+		//biomeBattle = new BiomeGenBattle(62).setBiomeName("Battle Biome").setMinMaxHeight(-1F, 1F).setDisableRain();
+		
 		NetworkRegistry.instance().registerGuiHandler(instance, new GuiHandler());
 		LanguageRegistry.instance().addStringLocalization("container.inverter", "Inverter");
 		
-		DimensionManager.registerProviderType(bjmMod.battleDimensionId, BattleDimension.class, false);
-		DimensionManager.registerDimension(bjmMod.battleDimensionId, bjmMod.battleDimensionId);
+		//DimensionManager.registerProviderType(bjmMod.battleDimensionId, WorldProviderBattle.class, false);
+		//DimensionManager.registerDimension(bjmMod.battleDimensionId, bjmMod.battleDimensionId);
+		
+
 		
     };
 

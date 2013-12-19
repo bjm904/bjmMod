@@ -1,16 +1,15 @@
-package bjmMod;
+package bjmMod.biome;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.world.biome.BiomeEndDecorator;
+import net.minecraft.src.ModLoader;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.biome.BiomeGenOcean;
 import net.minecraft.world.biome.SpawnListEntry;
 
-public class BattleBiome extends BiomeGenBase{
+public class BiomeGenBattle extends BiomeGenBase{
 
-	public BattleBiome(int par1) {
-		super(par1);
+	public BiomeGenBattle(int id) {
+		super(id);
 		this.setBiomeName("Fuck This Shit");
 		this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
@@ -27,6 +26,8 @@ public class BattleBiome extends BiomeGenBase{
         this.theBiomeDecorator.flowersPerChunk = -999;
         this.theBiomeDecorator.generateLakes = false;
         this.waterColorMultiplier = 14999999;
+		
+        
 	}
 
 }
