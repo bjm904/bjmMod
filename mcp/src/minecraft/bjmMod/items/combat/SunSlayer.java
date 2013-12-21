@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -14,10 +15,12 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
 import bjmMod.ModInfo;
 import bjmMod.Names;
 import bjmMod.bjmMod;
+import bjmMod.items.Items;
 
 import com.google.common.collect.Multimap;
 
@@ -29,6 +32,7 @@ public class SunSlayer extends Item
     private float weaponDamage;
     private final EnumToolMaterial toolMaterial;
     private String unlocname;
+    private String off="";
 
     public SunSlayer(int par1, EnumToolMaterial par2EnumToolMaterial, int durability, float strength, String unlocname, boolean active)
     {
@@ -40,6 +44,16 @@ public class SunSlayer extends Item
         this.weaponDamage = strength;
         this.setUnlocalizedName(unlocname);
         this.unlocname=unlocname;
+    }
+    
+    public void onUpdate(ItemStack par1ItemStack, World par2World, Entity player, int par4, boolean par5) {
+    	if(MinecraftServer.getServer().getTickCounter() > 12000){
+    		this.off="Off";
+    	}else{
+    		this.off="";
+    	}
+    	
+    	
     }
 
     /**
@@ -159,7 +173,7 @@ public class SunSlayer extends Item
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon) {
-		itemIcon = icon.registerIcon(ModInfo.texture + ":" + unlocname);
+		itemIcon = icon.registerIcon(ModInfo.texture + ":" + unlocname+off);
 	}
 	
 }

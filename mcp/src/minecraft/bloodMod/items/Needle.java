@@ -863,33 +863,6 @@ public class Needle extends Item{
 							return true;
 						}
 					}
-				}else if(target instanceof EntityVillager) {
-					int bagid = Items.bloodBagZombieVillager.itemID;
-					
-					for(int i=9;i>0;i--){
-						int slotnum = this.getIndexOfItem(player, bagid, i);
-						if(slotnum >= 0){
-							Slot slot = (Slot)player.inventoryContainer.getSlot(slotnum);
-							ItemStack itemstack1 = player.inventory.getStackInSlot(slotnum);
-							int damage = itemstack1.getItemDamage();
-							if(damage < 10){
-								player.inventory.setInventorySlotContents(slotnum, new ItemStack(itemstack1.itemID, 1 , itemstack1.getItemDamage()+1));
-								onDraw(itemstack, player, target);
-								return true;
-							}
-						}
-					}
-					int slotnum = this.getIndexOfItem(player, Items.bloodBag.itemID, 0);
-					if(slotnum >= 0){
-						Slot slot = (Slot)player.inventoryContainer.getSlot(slotnum);
-						ItemStack itemstack1 = player.inventory.getStackInSlot(slotnum);
-						int damage = itemstack1.getItemDamage();
-						if(damage < 10){
-							player.inventory.setInventorySlotContents(slotnum, new ItemStack(bagid, 1 , 1));
-							onDraw(itemstack, player, target);
-							return true;
-						}
-					}
 				}
 			return false;
 		}

@@ -227,7 +227,7 @@ public class ChunkProviderBattle implements IChunkProvider {
 		int l = b0 + 1;
 		
 		this.biomesforGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(biomesforGeneration, i*4-2, j*4-2, k+5, l+5);
-		this.noiseArray = this.initalizeNoiseFeild(this.noiseArray, i*b0, 0, j*b0, k, b1, l);
+		this.noiseArray = this.initalizeNoiseFeild(this.noiseArray, i*b0, 0, j*b0, k, b3, l);
 		
 		for(int i1 = 0;i1<b0;i1++){
 			for(int j1=0;j1<b0;j1++){
@@ -367,9 +367,46 @@ public class ChunkProviderBattle implements IChunkProvider {
 				}
 				
 				j2++;
+				
+				for(int k3=0;k3<sizeY;k3++){
+					double d3 = (double)f2;
+					double d4 = (double)f1;
+					d3 += d2*0.2D;
+					double d5 = (double)sizeY / 2D + d3*4D;
+					double d6 = 0D;
+					double d7 = (double)(k3-d5) * 12D * 128D / 128D / d4;
+					
+					if(d7<0D){
+						d7 *= 4D;
+					}
+					double d8 = this.noise1[i2] / 512D;
+					double d9 = this.noise2[i2] / 512D;
+					double d10 = (this.noise3[i2] / 10D + 1D) / 2D;
+					
+					if(d10 < 0D){
+						d6 = d8;
+					}else if(d10 > 1D){
+						d6 = d9;
+					}else{
+						d6 = d8+ (d9-d8)*d10;
+					}
+					
+					d6 -= d7;
+					
+					if(k3 > sizeY-4){
+						double d11 = (double)((float)(k3-(sizeY-4)) / 3F);
+						d6 = d6 * (1D-d11) + (-10D * d11);
+						
+					}
+					
+					doubleArray[i2] = d6;
+					i2++;
+				}
 			}
 		}
+		
 		return doubleArray;
+		
 	}
 
 	public Chunk loadChunk(int i, int j) {
